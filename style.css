@@ -1,32 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Playwrite+AU+QLD:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playwrite+AU+QLD:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&display=swap");
 /* General Body & Typography */
 a {
   text-decoration: none;
   color: inherit;
 }
 body {
-  background-color: #fadadd; /* Baby Pink */
-  font-family: 'Poppins', sans-serif;
+  background-color: #ecdbc5;
+  font-family: "Poppins", sans-serif;
   color: #4b4b4b;
   scroll-behavior: smooth;
 }
-
-/* .section-title {
-  font-weight: 600;
-  color: #da7f8f; 
-} *
-
 /* Sticky Navigation Bar */
-.navbar {
-  /* From https://css.glass */
-  background: rgba(255, 255, 255, 0.13);
-  /* border-radius: 50px; */
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(4.2px);
-  -webkit-backdrop-filter: blur(4.2px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-}
 
+.navbar {
+  background: rgba(255, 255, 255, 0.15) !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
 .navbar-brand {
   font-weight: 700;
   font-size: 1.5rem;
@@ -39,21 +35,23 @@ body {
 }
 .nav-link:hover,
 .nav-link.active {
-  color: #da7f8f !important;
+  color: #000 !important;
 }
 .navigation {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 .navbar-nav .nav-link i {
   font-size: 1.2rem;
   padding: 20px 0;
 }
 /* Hero Section */
-.hero-section {
-  position: relative;
+.hero {
+  background-image: url(./img/bg2.png);
   height: 100vh;
-  background: url(./img/hero.jpg) no-repeat center center/cover;
+  background-position: center;
   position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .hero-section .hero_slider {
   height: 100%;
@@ -61,13 +59,12 @@ body {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  padding-top: 50%;
+  padding-top: 10px;
 }
 .cardBanner {
   padding: 40px 0;
   background: rgba(255, 255, 255, 0.13);
   border-radius: 100px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(4.2px);
   -webkit-backdrop-filter: blur(4.2px);
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -124,8 +121,10 @@ body {
 }
 /* Product Section */
 .product-section {
-  padding: 60px 0;
-  background: url(./img/baby.jpg) no-repeat center center/cover;
+  padding: 130px 0;
+background: #ffffff;
+background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 13%, rgba(236, 219, 197, 1) 100%);
+  /* background: url(./img/baby.jpg) no-repeat center center/cover; */
 }
 .product-section .section-title {
   text-align: center;
@@ -133,12 +132,12 @@ body {
 }
 .product-section .product-card {
   background: rgba(255, 255, 255, 0.14);
-  border-radius: 200px;
+  border-radius: 150px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(3.2px);
   -webkit-backdrop-filter: blur(3.2px);
   border: 1px solid rgba(255, 255, 255, 0.42);
-  padding: 20px;
+  padding: 20px 20px 30px 20px;
   overflow: hidden;
 }
 .product-section .product-card .product-img {
@@ -155,7 +154,7 @@ body {
 .product-section .product-card .product-title {
   font-size: 1.5rem;
   font-weight: 600;
-  margin: 30px 0;
+  margin: 20px 0 8px;
 }
 .product-section .product-card .product-brand {
   font-size: 1rem;
@@ -165,15 +164,15 @@ body {
 .product-section .product-card .product-icon {
   font-size: 1.5rem;
   transition: color 0.3s ease;
-  margin: 30px;
+  margin: 20px;
   gap: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .product-section .product-card .product-icon i {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -193,6 +192,9 @@ body {
 }
 /* Media Queries for Responsiveness */
 @media (max-width: 767px) {
+  .product-section {
+    padding-top: 90px;
+  }
   .product-section .section-title {
     margin-bottom: 30px;
   }
@@ -207,8 +209,8 @@ body {
     font-size: 0.7rem;
   }
   .product-section .product-card .product-icon {
-    font-size: 1.5rem;
-    margin: 10px;
+    font-size: 1.2rem;
+    margin: 5px;
     gap: 10px;
   }
   .product-section .product-card .product-icon i {
@@ -255,7 +257,7 @@ p {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .tariff {
@@ -345,7 +347,7 @@ p {
 }
 
 .tariff__tag::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   z-index: 1;
@@ -375,7 +377,7 @@ p {
   font-size: 40px;
   line-height: 1.1;
   font-weight: 400;
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   color: white;
   text-transform: uppercase;
 }
@@ -397,7 +399,7 @@ p {
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.4;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   outline: none;
   background-color: transparent;
   cursor: pointer;
@@ -563,7 +565,10 @@ p {
 /* Contact Us */
 #contact {
   padding: 80px 0 0 0;
-  background: url(./img/baby.jpg) no-repeat center center/cover;
+  /* background: #fff; */
+  /* background: url(./img/baby.jpg) no-repeat center center/cover; */
+  background: #ECDBC5;
+background: radial-gradient(circle, rgba(236, 219, 197, 1) 63%, rgba(255, 255, 255, 1) 89%);
 }
 #contact .contact-section {
   /* min-height: 100vh; */
@@ -594,11 +599,11 @@ p {
 }
 #contact .icon-circle i {
   color: black;
-  font-size: 50px;
+  font-size: 40px;
 }
 
 #contact .info-title {
-  font-family: 'poppins' sans-serif;
+  font-family: "poppins" sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 170%;
@@ -608,7 +613,7 @@ p {
 }
 
 #contact .info-subtitle {
-  font-family: 'poppins' sans-serif;
+  font-family: "poppins" sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 170%;
@@ -631,7 +636,7 @@ p {
 }
 
 #contact .form-title {
-  font-family: 'poppins' sans-serif;
+  font-family: "poppins" sans-serif;
   font-weight: 600;
   font-size: 24px;
   line-height: 150%;
@@ -639,7 +644,7 @@ p {
 }
 
 #contact .form-description {
-  font-family: 'poppins' sans-serif;
+  font-family: "poppins" sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 150%;
@@ -648,14 +653,14 @@ p {
 }
 
 #contact .form-control {
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid #ecdbc5;
   border-radius: 6px;
   padding: 14px 16px;
 }
 
 #contact .form-control:focus {
-  border: 1px solid green;
-  box-shadow: 0 0 0 0.2rem rgba(5, 150, 105, 0.25);
+  border: 1px solid #dac7ae;
+  box-shadow: 0 0 0 0.2rem #dac7ae;
   outline: none;
 }
 #contact .map-container {
@@ -677,6 +682,7 @@ p {
     margin-bottom: 2rem;
   }
 }
+/* !============================================================ */
 /* Login */
 .login-page {
   margin: 0;
@@ -686,10 +692,12 @@ p {
   align-items: center;
   min-height: 100vh;
   font-family: 'Jost', sans-serif;
-  background: url(./img/baby.jpg) no-repeat center center/cover;
+  /* background: url(./img/baby.jpg) no-repeat center center/cover; */
+  background: #ffffff;
+  background: linear-gradient(13deg, rgba(255, 255, 255, 1) 38%, rgba(236, 219, 197, 1) 75%);
 }
 .main {
-  width: 350px;
+  width: 500px;
   height: 500px;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.2);
@@ -719,8 +727,7 @@ p {
 }
 .main input {
   width: 60%;
-  height: 10px;
-  background: #e0dede;
+  background: #fff;
   justify-content: center;
   display: flex;
   margin: 20px auto;
@@ -735,34 +742,38 @@ p {
   margin: 10px auto;
   justify-content: center;
   display: block;
-  color: #fff;
-  background: #573b8a;
   font-size: 1em;
   font-weight: bold;
   margin-top: 30px;
   outline: none;
-  border: none;
   border-radius: 5px;
   transition: 0.2s ease-in;
   cursor: pointer;
+  color: #000;
+  background: #ecdbc5;
+  border-radius: 16px;
+  /* box-shadow: 0 4px 30px rgba(205, 183, 183, 0.1); */
+  backdrop-filter: blur(7.1px);
+  -webkit-backdrop-filter: blur(7.1px);
+  border:none;
 }
 .main button:hover {
-  background: #6d44b8;
+  background: rgba(255, 255, 255, 0.57);
 }
 .login {
-  height: 460px;
-  background: #eee;
+  height: 550px;
+  background: #ffffff;
   border-radius: 60% / 10%;
   transform: translateY(-180px);
   transition: 0.8s ease-in-out;
 }
 .login label {
-  color: #573b8a;
+  color: #000;
   transform: scale(0.6);
 }
 
 #chk:checked ~ .login {
-  transform: translateY(-500px);
+  transform: translateY(-550px);
 }
 #chk:checked ~ .login label {
   transform: scale(1);
@@ -772,91 +783,81 @@ p {
 }
 /* Product Detail */
 .product-detail {
-  height: 100vh;
-  background: url(./img/baby.jpg) no-repeat center center/cover;
+  padding-top: 8%;
+  height: 100%;
+  /* background: url(./img/business-bg.png) no-repeat center center/cover; */
+
+  /* background: #fff; */
+  background: #ffffff;
+background: radial-gradient(circle, rgba(255, 255, 255, 1) 17%, rgba(236, 219, 197, 1) 75%);
+padding-bottom: 50px;
 }
-.product-detail .product-content {
-  padding: 2rem;
+.product-detail .company_name h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: 500;
+  /* color: #fff; */
 }
-.product-detail .product-content h1 {
-  padding: 2rem 0;
-  font-family: 'Playwrite AU QLD', cursive;
-}
-.product-detail .product-content p {
-  padding: 1rem 0;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 170%;
-}
-.product-detail .product-info {
+/* .product-detail .company_name p{
+  color: #fff;
+} */
+
+.product-detail .product-image {
   width: 100%;
-  /* height: 80%; */
-  background: rgba(255, 255, 255, 0.22);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(9.2px);
-  -webkit-backdrop-filter: blur(9.2px);
-  padding: 30px;
-  margin-top: 30px;
-}
-.product-detail .product-info .product-icon {
-  display: flex;
-  /* padding: 1rem 0; */
-  gap: 1rem;
-}
-.product-detail .product-info .product-icon i {
-  font-size: 1.5rem;
-  color: #ffffff;
-  padding: 10px;
-  border-radius: 50%;
-  transition: transform 0.3s ease;
-  background-color: #928d8d;
-  border: 1px solid #ffffff;
-}
-.product-detail .product-info .product-images {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80%;
-  margin-top: 20px;
-  border-radius: 25px;
-}
-.product-detail .product-info .product-images .product-image {
-  border-radius: 25px;
-  height: 80%;
-  width: 100%;
-}
-.product-detail .product-info .product-images .product-image img {
-  border-radius: 25px;
-  width: 100%;
-  height: 100%;
-}
-.product-detail .product-info .btn {
-  border: 1px solid #ffffff;
-  background: transparent;
-  color: #ffffff;
-  padding: 12px 24px;
-  border-radius: 25px;
-  transition: background 0.3s ease;
-  margin-top: 10px;
 }
 
-.product-detail .product-info .btn:hover {
-  background: #dbc6c6;
-  color: #fff;
+.icons a {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 50px;
+  margin-right: 10px;
+  transition: background-color 0.3s ease;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  /* color: #fff; */
 }
+.product-info{
+  position: relative;
+}
+.icons {
+  position: absolute;
+  z-index: 1000;
+  left: 10px;
+  top: 10px;
+}
+.product-info .product-images{
+  background: rgba(255, 255, 255, 0);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(4.8px);
+-webkit-backdrop-filter: blur(4.8px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+padding: 20px;
+}
+.product-description {
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 @media (max-width: 767px) {
-  .product-detail .product-content h1 {
-    padding: 1rem 0;
-    font-family: 'Playwrite AU QLD', cursive;
-  }
-  .product-detail .product-content p {
-    padding: 1rem 0;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 170%;
+  .product-detail {
+    padding-top: 18%;
   }
 }
 /* FOOTER */
@@ -876,7 +877,7 @@ p {
 
 .footer h5 {
   margin-bottom: 20px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-size: 20px;
   line-height: 150%;
@@ -884,7 +885,7 @@ p {
 }
 
 .footer p {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 150%;
@@ -901,7 +902,7 @@ p {
 }
 
 .footer ul li a {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 150%;
