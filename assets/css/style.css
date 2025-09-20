@@ -46,7 +46,7 @@ body {
 }
 /* Hero Section */
 .hero {
-  background-image: url(./img/bg2.png);
+  background-image: url(../img/bg2.png);
   height: 100vh;
   background-position: center;
   position: relative;
@@ -154,7 +154,7 @@ background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255
 .product-section .product-card .product-title {
   font-size: 1.5rem;
   font-weight: 600;
-  margin: 20px 0 8px;
+  margin: 30px 0 8px;
 }
 .product-section .product-card .product-brand {
   font-size: 1rem;
@@ -189,6 +189,35 @@ background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255
 .product-section .product-card .product-category {
   font-size: 0.875rem;
   color: #000000;
+  margin: 20px 0;
+}
+.pagination{
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  margin-top: 50px;
+}
+.pagination .page-item .page-link{
+  color: #000000;
+  border-radius: 50%;
+  margin: 0 5px;
+}
+.pagination .page-item .page-link a{
+  color: #000000;
+  padding: 20px;
+  justify-content: center;
+}
+.pagination .page-item .page-link:hover{
+  background-color: #000000;
+  color: #ffffff;
+}
+.pagination .page-item .page-link:focus{
+  box-shadow: none;
+}
+.pagination .page-item.active .page-link{
+  background-color: #000000;
+  color: #ffffff;
+  border: 1px solid #000000;
 }
 /* Media Queries for Responsiveness */
 @media (max-width: 767px) {
