@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Playwrite+AU+QLD:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+AU+QLD:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&display=swap');
 /* General Body & Typography */
 a {
   text-decoration: none;
@@ -6,7 +6,7 @@ a {
 }
 body {
   background-color: #ecdbc5;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: #4b4b4b;
   scroll-behavior: smooth;
 }
@@ -38,7 +38,7 @@ body {
   color: #000 !important;
 }
 .navigation {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 .navbar-nav .nav-link i {
   font-size: 1.2rem;
@@ -122,9 +122,13 @@ body {
 /* Product Section */
 .product-section {
   padding: 130px 0;
-background: #ffffff;
-background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 13%, rgba(236, 219, 197, 1) 100%);
-  /* background: url(./img/baby.jpg) no-repeat center center/cover; */
+  background: #ffffff;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 13%,
+    rgba(236, 219, 197, 1) 100%
+  );
 }
 .product-section .section-title {
   text-align: center;
@@ -139,7 +143,33 @@ background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255
   border: 1px solid rgba(255, 255, 255, 0.42);
   padding: 20px 20px 30px 20px;
   overflow: hidden;
+  position: relative;
 }
+.product-section .wishList-icon {
+  position: absolute;
+  top: 5%;
+  right: 20%;
+  font-size: 1.5rem;
+  color: #000000;
+  background: rgba(255, 255, 255, 0.7);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  z-index: 10000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.product-section .product-card:hover .wishList-icon {
+  opacity: 1;
+  visibility: visible;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 .product-section .product-card .product-img {
   object-fit: cover;
   width: 100%;
@@ -191,30 +221,30 @@ background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255
   color: #000000;
   margin: 20px 0;
 }
-.pagination{
+.pagination {
   justify-content: center;
   display: flex;
   align-items: center;
   margin-top: 50px;
 }
-.pagination .page-item .page-link{
+.pagination .page-item .page-link {
   color: #000000;
   border-radius: 50%;
   margin: 0 5px;
 }
-.pagination .page-item .page-link a{
+.pagination .page-item .page-link a {
   color: #000000;
   padding: 20px;
   justify-content: center;
 }
-.pagination .page-item .page-link:hover{
+.pagination .page-item .page-link:hover {
   background-color: #000000;
   color: #ffffff;
 }
-.pagination .page-item .page-link:focus{
+.pagination .page-item .page-link:focus {
   box-shadow: none;
 }
-.pagination .page-item.active .page-link{
+.pagination .page-item.active .page-link {
   background-color: #000000;
   color: #ffffff;
   border: 1px solid #000000;
@@ -286,7 +316,7 @@ p {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 .tariff {
@@ -376,7 +406,7 @@ p {
 }
 
 .tariff__tag::before {
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
   z-index: 1;
@@ -406,7 +436,7 @@ p {
   font-size: 40px;
   line-height: 1.1;
   font-weight: 400;
-  font-family: "Oswald", sans-serif;
+  font-family: 'Oswald', sans-serif;
   color: white;
   text-transform: uppercase;
 }
@@ -428,7 +458,7 @@ p {
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.4;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   outline: none;
   background-color: transparent;
   cursor: pointer;
@@ -596,8 +626,12 @@ p {
   padding: 80px 0 0 0;
   /* background: #fff; */
   /* background: url(./img/baby.jpg) no-repeat center center/cover; */
-  background: #ECDBC5;
-background: radial-gradient(circle, rgba(236, 219, 197, 1) 63%, rgba(255, 255, 255, 1) 89%);
+  background: #ecdbc5;
+  background: radial-gradient(
+    circle,
+    rgba(236, 219, 197, 1) 63%,
+    rgba(255, 255, 255, 1) 89%
+  );
 }
 #contact .contact-section {
   /* min-height: 100vh; */
@@ -632,7 +666,7 @@ background: radial-gradient(circle, rgba(236, 219, 197, 1) 63%, rgba(255, 255, 2
 }
 
 #contact .info-title {
-  font-family: "poppins" sans-serif;
+  font-family: 'poppins' sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 170%;
@@ -642,7 +676,7 @@ background: radial-gradient(circle, rgba(236, 219, 197, 1) 63%, rgba(255, 255, 2
 }
 
 #contact .info-subtitle {
-  font-family: "poppins" sans-serif;
+  font-family: 'poppins' sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 170%;
@@ -665,7 +699,7 @@ background: radial-gradient(circle, rgba(236, 219, 197, 1) 63%, rgba(255, 255, 2
 }
 
 #contact .form-title {
-  font-family: "poppins" sans-serif;
+  font-family: 'poppins' sans-serif;
   font-weight: 600;
   font-size: 24px;
   line-height: 150%;
@@ -673,7 +707,7 @@ background: radial-gradient(circle, rgba(236, 219, 197, 1) 63%, rgba(255, 255, 2
 }
 
 #contact .form-description {
-  font-family: "poppins" sans-serif;
+  font-family: 'poppins' sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 150%;
@@ -723,7 +757,11 @@ background: radial-gradient(circle, rgba(236, 219, 197, 1) 63%, rgba(255, 255, 2
   font-family: 'Jost', sans-serif;
   /* background: url(./img/baby.jpg) no-repeat center center/cover; */
   background: #ffffff;
-  background: linear-gradient(13deg, rgba(255, 255, 255, 1) 38%, rgba(236, 219, 197, 1) 75%);
+  background: linear-gradient(
+    13deg,
+    rgba(255, 255, 255, 1) 38%,
+    rgba(236, 219, 197, 1) 75%
+  );
 }
 .main {
   width: 500px;
@@ -784,7 +822,7 @@ background: radial-gradient(circle, rgba(236, 219, 197, 1) 63%, rgba(255, 255, 2
   /* box-shadow: 0 4px 30px rgba(205, 183, 183, 0.1); */
   backdrop-filter: blur(7.1px);
   -webkit-backdrop-filter: blur(7.1px);
-  border:none;
+  border: none;
 }
 .main button:hover {
   background: rgba(255, 255, 255, 0.57);
@@ -818,8 +856,12 @@ background: radial-gradient(circle, rgba(236, 219, 197, 1) 63%, rgba(255, 255, 2
 
   /* background: #fff; */
   background: #ffffff;
-background: radial-gradient(circle, rgba(255, 255, 255, 1) 17%, rgba(236, 219, 197, 1) 75%);
-padding-bottom: 50px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 17%,
+    rgba(236, 219, 197, 1) 75%
+  );
+  padding-bottom: 50px;
 }
 .product-detail .company_name h1 {
   font-size: 2rem;
@@ -854,7 +896,7 @@ padding-bottom: 50px;
   border: 1px solid rgba(255, 255, 255, 0.3);
   /* color: #fff; */
 }
-.product-info{
+.product-info {
   position: relative;
 }
 .icons {
@@ -863,14 +905,14 @@ padding-bottom: 50px;
   left: 10px;
   top: 10px;
 }
-.product-info .product-images{
+.product-info .product-images {
   background: rgba(255, 255, 255, 0);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(4.8px);
--webkit-backdrop-filter: blur(4.8px);
-border: 1px solid rgba(255, 255, 255, 0.3);
-padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4.8px);
+  -webkit-backdrop-filter: blur(4.8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 20px;
 }
 .product-description {
   padding: 20px;
@@ -906,7 +948,7 @@ padding: 20px;
 
 .footer h5 {
   margin-bottom: 20px;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 500;
   font-size: 20px;
   line-height: 150%;
@@ -914,7 +956,7 @@ padding: 20px;
 }
 
 .footer p {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 150%;
@@ -931,7 +973,7 @@ padding: 20px;
 }
 
 .footer ul li a {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 150%;
@@ -1015,4 +1057,160 @@ padding: 20px;
 .payment-methods img {
   height: 24px;
   margin-left: 5px;
+}
+/* About Us */
+/* Hero Section */
+.About-hero-section {
+  background-image: url('../img/about/dubai-skyline-hero.jpg');
+  color: white;
+  padding: 200px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.About-hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.674);
+  opacity: 0.3;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Custom Cards */
+.custom-card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  height: 100%;
+    background: rgba(255, 255, 255, 0.21);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.custom-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.value-card {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.21);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.value-icon {
+  background: linear-gradient(135deg, var(--secondary-color), #f97316);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 2rem;
+  color: rgba(80, 67, 67, 0.782);
+  margin: 0 auto 1.5rem;
+}
+
+/* Team Cards */
+.team-card {
+  background: rgba(255, 255, 255, 0.21);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  text-align: center;
+  padding: 2rem;
+}
+
+.team-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin: 0 auto 1.5rem;
+  border: 4px solid var(--secondary-color);
+  object-fit: cover;
+}
+
+/* Section Styling */
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text-dark);
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  color: var(--text-light);
+  margin-bottom: 3rem;
+}
+
+.bg-light-custom {
+  background-color: var(--bg-light);
+}
+
+/* CTA Section */
+.cta-section {
+  /* background: linear-gradient(135deg, var(--accent-color) 0%, #059669 100%);
+  color: white; */
+  padding: 80px 0;
+  background: #00c853;
+}
+
+.btn-custom {
+  background: var(--secondary-color);
+  border: none;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-custom:hover {
+  background: #d97706;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Animations */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Dubai skyline decoration */
+.dubai-accent {
+  position: relative;
+}
+
+.dubai-accent::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-size: 1.5rem;
+  opacity: 0.3;
 }
