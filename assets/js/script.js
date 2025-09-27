@@ -129,3 +129,37 @@ style.textContent = `
             }
         `;
 document.head.appendChild(style);
+
+$(document).ready(function () {
+  $('#searchBtn').click(function () {
+    $('.searchIcon').toggleClass('d-none');
+    $('.closeIcon').toggleClass('d-none');
+  });
+});
+
+$(document).ready(function () {
+
+  //search popup
+  $('#searchBtn').on('click', function () {
+    $('.searchBox').toggleClass('active');
+
+    if ($('.searchBox').hasClass('active')) {
+      $('#searchBtn .closeIcon').removeClass('d-none').addClass('d-block');
+      $('#searchBtn .searchIcon').addClass('d-none');
+      $('.searchBox-overlay').addClass('active').fadeIn(400);
+    } else {
+      $('#searchBtn .closeIcon').addClass('d-none').removeClass('d-block');
+      $('#searchBtn .searchIcon').removeClass('d-none');
+      $('.searchBox-overlay').removeClass('active').fadeOut(400);
+    }
+  });
+  $('.searchBox-overlay').on('click', function () {
+    $('.searchBox').removeClass('active');
+    $('#searchBtn .closeIcon').addClass('d-none').removeClass('d-block');
+    $('#searchBtn .searchIcon').removeClass('d-none');
+    $('.searchBox-overlay').removeClass('active').fadeOut(400);
+  });
+
+
+  
+});
