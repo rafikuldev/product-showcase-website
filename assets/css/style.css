@@ -1231,14 +1231,13 @@ p {
   justify-content: center;
   font-size: 1.2rem;
 }
-nav .main-menu .category:hover .iconify-icon{
+nav .main-menu .category:hover .iconify-icon {
   color: var(--primary);
   font-size: 50px;
 }
 nav .main-menu .category:hover .iconify-icon iconify-icon {
   transform: rotate(180deg);
   transition: transform 0.3s ease;
-
 }
 
 nav .searchBox {
@@ -1340,10 +1339,145 @@ nav .searchBox.active {
     top: 62px;
     width: 100%;
   }
-  nav .main-menu .category:hover .iconify-icon{
+  nav .main-menu .category:hover .iconify-icon {
     font-size: 30px;
   }
   nav .main-menu .category:hover .iconify-icon iconify-icon {
     font-size: 30px;
   }
+}
+/* Filter */
+/* ! ===================Filtering Left Section Start Here======================== */
+/* *All Categories Radio Buttons Start Here */
+.filterBtn {
+  position: relative;
+}
+.filterBtn button {
+  border-radius: 43px;
+  width: 131px;
+  height: 45px;
+  padding: 0 32px 0 0;
+  background: green;
+  color: #000;
+  border: 0;
+  outline: none;
+  background: rgba(255, 255, 255, 0.26);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.9px);
+  -webkit-backdrop-filter: blur(7.9px);
+  border: 1px solid rgba(255, 255, 255, 0.39);
+}
+.filterBtn iconify-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 70px;
+  margin-left: 10px;
+  color: #000;
+}
+.categoreBtn {
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 150%;
+  color: rgb(56, 56, 56);
+  z-index: 5;
+}
+.categories {
+  margin-top: 20px;
+}
+.categories .radioParent a {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 150%;
+  color: var(--gray-scale-gray-–-900);
+}
+
+.shopCollapse {
+  overflow: hidden;
+  /* padding-bottom: 20px; */
+}
+
+.shopOpen {
+  transition: 0.3s ease;
+  transform: translateY(-100%);
+  height: 0;
+  overflow: hidden;
+  padding: 0;
+}
+.shopOpen li {
+  padding: 5px 0;
+}
+.shopOpen label {
+  cursor: pointer;
+}
+.shopOpen li input {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  background: #00b207;
+  cursor: pointer;
+}
+
+.shopOpen label span {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: var(--gray-scale-gray-–-500);
+  margin-left: 5px;
+}
+.shopOpen.active {
+  transform: translateY(0%);
+  height: 100%;
+  overflow: visible;
+  padding: 0;
+}
+/* *All Categories Radio Buttons End Here */
+
+/* *Price Range Slider Start Here */
+.priceBtn {
+  /* padding:0 0 20px 0; */
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 150%;
+  color: var(--gray-scale-gray-–-900);
+  z-index: 5;
+  border-top: 1px solid var(--gray-scale-gray-–-100);
+}
+.priceRangeWrapper {
+  overflow: hidden;
+}
+.priceRangeOpen {
+  transition: 0.3s ease;
+  transform: translateY(-100%);
+  height: 0;
+  overflow: hidden;
+}
+.priceRangeOpen.active {
+  transform: translateY(0%);
+  height: 100%;
+  padding: 10px 0;
+}
+.priceRangeOpen li {
+  padding: 5px 0;
+}
+.priceRangeOpen label {
+  cursor: pointer;
+}
+.priceRangeOpen li input {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  background: #00b207;
+  cursor: pointer;
+}
+
+.priceRangeOpen label span {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: var(--gray-scale-gray-–-500);
+  margin-left: 5px;
 }
