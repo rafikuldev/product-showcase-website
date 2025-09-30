@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pastel Bloom Boutique</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@220;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container position-relative">
+            <a class="navbar-brand" href="./index.html">Glame Demo</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto navigation justify-content-center">
+                    <li class="nav-item"><a class="nav-link active" href="./index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./category.html">Category</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./contact.html">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./about-us.html">About Us</a></li>
+                </ul>
+                <ul class="navbar-nav ms-auto flex-row">
+                    <li id="searchBtn">
+                        <span class="iconify-icon">
+                            <iconify-icon class="searchIcon" icon="lucide:search" width="22" height="22"></iconify-icon>
+                            <iconify-icon class="closeIcon d-none" icon="material-symbols:close" width="25"
+                                height="25"></iconify-icon>
+                        </span>
+                    </li>
+                    <!-- <li id="searchBtn" class="nav-item me-3">
+                        <span class=" iconify-icon">
+                            <i class="searchIcon fa-solid fa-magnifying-glass"></i>
+                            <i class="closeIcon fa-solid fa-xmark"></i>
+                        </span>
+                    </li> -->
+                    <li>
+                        <span class="iconify-icon">
+                            <a href="./login.html">
+                                <iconify-icon icon="mdi:heart-outline" width="22" height="22"></iconify-icon>
+                            </a>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="iconify-icon">
+                            <a href="./login.html">
+                                <iconify-icon icon="lucide:user-round" width="22" height="22"></iconify-icon>
+                            </a>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+            <!-- search box -->
+            <div class="searchBox-overlay"></div>
+            <div class="searchBox">
+                <form>
+                    <div class="search-input">
+                        <input type="text" name="search" placeholder="Find your favorite products..." />
+                        <button>
+                            <span class="iconify-icon">
+                                <iconify-icon icon="lucide:search" width="22" height="22"></iconify-icon>
+                            </span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <!-- Hero section -->
+        <section class="hero-section">
+            <div class="hero"></div>
+            <div class="container">
+                <div class="hero_slider my-5">
+                    <div class="cardBanner">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="banner-text">
+                                    <h2 class="title">Spring Collection</h2>
+                                    <p class="sub-title">Discover the latest trends in fashion</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="banner-item justify-content-end d-flex">
+                                    <a href="shop-default.html" class="bannerIcon tf-btn btn-fill animate-hover-btn">
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cardBanner">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="banner-text">
+                                    <h2 class="title">Spring Collection</h2>
+                                    <p class="sub-title">Discover the latest trends in fashion</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="banner-item justify-content-end d-flex">
+                                    <a href="shop-default.html" class="bannerIcon tf-btn btn-fill animate-hover-btn">
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cardBanner">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="banner-text">
+                                    <h2 class="title">Spring Collection</h2>
+                                    <p class="sub-title">Discover the latest trends in fashion</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="banner-item justify-content-end d-flex">
+                                    <a href="shop-default.html" class="bannerIcon tf-btn btn-fill animate-hover-btn">
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Hero section -->
+    </main>
+    <script src="./assets/js/jquery-1.11.0.min.js"></script>
+    <script src="./assets/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="./assets/js/iconify-icon.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+</body>
+
+</html>
