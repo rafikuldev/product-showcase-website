@@ -4,7 +4,11 @@ a {
   text-decoration: none;
   color: inherit;
 }
-ul, li{
+ul{
+  text-decoration: none;
+  list-style-type: none;
+}
+li{
   text-decoration: none;
   list-style-type: none;
 }
