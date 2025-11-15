@@ -204,3 +204,24 @@ $(document).ready(function () {
     $('.filterCotant').removeClass('active');
   });
 });
+
+// Toggle for Categories
+document.querySelector('.toggle-btn-category').addEventListener('click', function() {
+  const categoryList = document.querySelector('.category-list');
+  categoryList.classList.toggle('hide');
+
+  // Rotate arrow icon
+  const icon = this.querySelector('iconify-icon');
+  icon.classList.toggle('rotated');
+});
+
+// Toggle for Brand
+document.querySelector('.toggle-btn-brand').addEventListener('click', function() {
+  const brandList = document.querySelector('.brand-list');
+  brandList.classList.toggle('hide');
+
+  // Rotate arrow icon
+  const icon = this.querySelector('iconify-icon');
+  icon.classList.toggle('rotated');
+});
+

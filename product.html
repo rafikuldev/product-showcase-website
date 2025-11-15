@@ -7,7 +7,7 @@
   <title>Pastel Bloom Boutique</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@220;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
   <link rel="stylesheet" type="text/css"
@@ -17,13 +17,14 @@
 </head>
 
 <body>
-
-  <nav class="navbar navbar-expand-lg sticky-top">
-    <div class="container position-relative">
+  <!-- <nav id="nav" class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
       <a class="navbar-brand" href="./index.html">Glame Demo</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        <span class="toggler-icon">
+          <i class="fa-solid fa-align-right"></i>
+        </span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto navigation justify-content-center">
@@ -33,340 +34,623 @@
           <li class="nav-item"><a class="nav-link" href="./about-us.html">About Us</a></li>
         </ul>
         <ul class="navbar-nav ms-auto flex-row">
-          <li id="searchBtn">
-            <span class="iconify-icon">
-              <iconify-icon class="searchIcon" icon="lucide:search" width="22" height="22"></iconify-icon>
-              <iconify-icon class="closeIcon d-none" icon="material-symbols:close" width="25"
-                height="25"></iconify-icon>
-            </span>
+          <li class="nav-item me-3">
+            <a class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#searchOffcanvas" href="#">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </a>
           </li>
-          <!-- <li id="searchBtn" class="nav-item me-3">
-                        <span class=" iconify-icon">
-                            <i class="searchIcon fa-solid fa-magnifying-glass"></i>
-                            <i class="closeIcon fa-solid fa-xmark"></i>
-                        </span>
-                    </li> -->
-          <li>
-            <span class="iconify-icon">
-              <a href="./login.html">
-                <iconify-icon icon="mdi:heart-outline" width="22" height="22"></iconify-icon>
-              </a>
-            </span>
+
+          <li class="nav-item me-3">
+            <a class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#wishlistOffcanvas" href="">
+              <i class="fa-regular fa-heart"></i>
+            </a>
           </li>
-          <li>
-            <span class="iconify-icon">
-              <a href="./login.html">
-                <iconify-icon icon="lucide:user-round" width="22" height="22"></iconify-icon>
-              </a>
-            </span>
+          <li class="nav-item"><a class="nav-link" href="./login.html"><i class="fa-regular fa-user"></i></a>
           </li>
         </ul>
       </div>
-      <!-- search box -->
-      <div class="searchBox-overlay"></div>
-      <div class="searchBox">
-        <form>
-          <div class="search-input">
-            <input type="text" name="search" placeholder="Find your favorite products..." />
-            <button>
-              <span class="iconify-icon">
-                <iconify-icon icon="lucide:search" width="22" height="22"></iconify-icon>
-              </span>
-            </button>
-          </div>
-        </form>
+    </div>
+  </nav> -->
+
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <div class="container">
+
+      <a class="navbar-brand" href="./index.html">Glame Demo</a>
+
+      <!-- Mobile toggler (visible only on small devices) -->
+      <button class="btn d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu"
+        aria-controls="offcanvasMenu" aria-label="Toggle navigation">
+        <i class="fa-solid fa-align-right"></i>
+      </button>
+
+      <!-- Desktop menu (visible from lg up) -->
+      <div class="collapse navbar-collapse d-none d-lg-flex" id="navbarNav">
+        <ul class="navbar-nav ms-auto navigation justify-content-center">
+          <li class="nav-item"><a class="nav-link active" href="./index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="./category.html">Category</a></li>
+          <li class="nav-item"><a class="nav-link" href="./contact.html">Contact Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="./about-us.html">About Us</a></li>
+        </ul>
+
+        <ul class="navbar-nav ms-auto flex-row">
+          <li class="nav-item me-3">
+            <a class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#searchOffcanvas" href="#">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </a>
+          </li>
+
+          <li class="nav-item me-3">
+            <a class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#wishlistOffcanvas" href="#">
+              <i class="fa-regular fa-heart"></i>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="./login.html"><i class="fa-regular fa-user"></i></a>
+          </li>
+        </ul>
       </div>
     </div>
   </nav>
+
+  <!-- Offcanvas Menu for Mobile -->
+  <!-- Offcanvas Menu for Mobile -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel"
+    style="width: 280px;">
+    <div class="offcanvas-header border-bottom">
+      <h5 class="offcanvas-title fw-bold" id="offcanvasMenuLabel">Menu</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+
+    <div class="offcanvas-body p-0 d-flex flex-column justify-content-between" style="height: calc(100vh - 56px);">
+      <!-- Navigation Links -->
+      <ul class="navbar-nav px-3 pt-3">
+        <li class="nav-item mb-2">
+          <a class="nav-link fs-5" href="./index.html">Home</a>
+        </li>
+        <li class="nav-item mb-2">
+          <a class="nav-link fs-5" href="./category.html">Category</a>
+        </li>
+        <li class="nav-item mb-2">
+          <a class="nav-link fs-5" href="./contact.html">Contact Us</a>
+        </li>
+        <li class="nav-item mb-2">
+          <a class="nav-link fs-5" href="./about-us.html">About Us</a>
+        </li>
+      </ul>
+
+      <!-- <hr class="my-0" /> -->
+
+      <!-- Bottom Icons Section -->
+      <ul class="navbar-nav flex-row justify-content-center px-3 py-3 gap-4 border-top">
+        <li class="nav-item">
+          <a class="nav-link fs-4 text-dark" data-bs-toggle="offcanvas" data-bs-target="#searchOffcanvas" href="#"
+            aria-label="Search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link fs-4 text-dark" data-bs-toggle="offcanvas" data-bs-target="#wishlistOffcanvas" href="#"
+            aria-label="Wishlist">
+            <i class="fa-regular fa-heart"></i>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link fs-4 text-dark" href="./login.html" aria-label="User Login">
+            <i class="fa-regular fa-user"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- searchOffcanvas -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="searchOffcanvas">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title">Search</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+    </div>
+
+    <div class="offcanvas-body">
+
+      <div class="search-box position-relative">
+        <input type="text" class="form-control search-input" placeholder="Type to search...">
+        <button class="search-btn">
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+
+      <!-- Product Preview Section -->
+      <div class="product-preview mt-4">
+        <div class="product-card d-flex align-items-center p-3 rounded-4 shadow-sm">
+          <img src="assets/img/bark-phone-light-brown.jpg" class="rounded-3 me-3" width="70" height="70" alt="Product">
+          <div class="flex-grow-1">
+            <h6 class="mb-1 fw-semibold">iPhone 12</h6>
+            <p class="text-muted small mb-1">Apple</p>
+          </div>
+        </div>
+      </div>
+      <div class="product-preview mt-4">
+        <div class="product-card d-flex align-items-center p-3 rounded-4 shadow-sm">
+          <img src="assets/img/bark-phone-black.jpg" class="rounded-3 me-3" width="70" height="70" alt="Product">
+          <div class="flex-grow-1">
+            <h6 class="mb-1 fw-semibold">iPhone 12</h6>
+            <p class="text-muted small mb-1">Apple</p>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+  <!-- wishlistOffcanvas -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="wishlistOffcanvas">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title">Your Wishlist</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+    </div>
+
+    <div class="offcanvas-body">
+
+      <!-- <div class="wishlist-empty text-center py-5">
+        <iconify-icon icon="mdi:heart-outline" width="48" height="48"></iconify-icon>
+        <p class="mt-3 text-muted">No items in wishlist</p>
+      </div> -->
+
+      <!-- Wishlist Products -->
+      <div class="wishlist-items mt-3">
+
+        <!-- Single Wishlist Product -->
+        <div class="wishlist-card d-flex align-items-center p-3 mb-3 rounded-4">
+
+          <img src="assets/img/watch/albert-orange.jpg" class="rounded-3 me-3" width="70" height="70" alt="Product">
+
+          <div class="flex-grow-1">
+            <h6 class="mb-1 fw-semibold">Premium Leather Wallet</h6>
+            <p class="text-muted small mb-1">Handcrafted </p>
+          </div>
+
+          <!-- Delete Button -->
+          <button class="delete-btn ms-2">
+            <i class="fa-solid fa-trash"></i>
+          </button>
+
+        </div>
+
+        <!-- Another Product -->
+        <div class="wishlist-card d-flex align-items-center p-3 mb-3 rounded-4">
+
+          <img src="assets/img/watch/albert-white.jpg" class="rounded-3 me-3" width="70" height="70" alt="Product">
+
+          <div class="flex-grow-1">
+            <h6 class="mb-1 fw-semibold">Classic Wrist Watch</h6>
+            <p class="text-muted small mb-1">Minimal</p>
+          </div>
+
+          <!-- Delete Button -->
+          <button class="delete-btn ms-2">
+            <i class="fa-solid fa-trash"></i>
+          </button>
+
+        </div>
+
+      </div>
+
+
+    </div>
+  </div>
+  <!-- Main  Area Start Here -->
   <main>
     <!-- Product Section -->
-        <section class="product-section">
-          <div class="container">
-            <div class="row">
-              <div class="col-12">
-                <h2 class="section-title text-center">Phone</h2>
+    <section class="product-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h2 class="section-title text-center">Phone</h2>
+          </div>
+        </div>
+        <div class="row justify-content-between">
+          <div class="col-lg-3 d-none d-lg-block">
+            <!-- *Filtering Start Here -->
+            <section id="filtering">
+              <div class="filterBtn">
+                <button type="button">Filter
+                </button>
+                <span>
+                  <iconify-icon icon="rivet-icons:filter" width="20" height="20"></iconify-icon>
+                </span>
               </div>
-            </div>
-            <div class="row justify-content-between">
-              <div class="col-lg-3">
-                <!-- *Filtering Start Here -->
-                <section id="filtering">
-                  <div class="filterBtn">
-                    <button type="button">Filter
-                    </button>
-                    <span>
-                      <iconify-icon icon="rivet-icons:filter" width="20" height="20"></iconify-icon>
-                    </span>
+              <!-- *All Categories Radio Buttons Start Here-->
+              <div class="categories">
+                <div class="row align-items-center categoreBtn ">
+                  <div class="col-6 radioParent"><a type="button">All Categories</a></div>
+                  <div class="col-6 text-end">
+                    <iconify-icon icon="ep:arrow-down-bold"></iconify-icon>
                   </div>
-                  <!-- *All Categories Radio Buttons Start Here-->
-                  <div class="categories">
-                    <div class="row align-items-center categoreBtn ">
-                      <div class="col-6 radioParent"><a type="button">All Categories</a></div>
-                      <div class="col-6 text-end">
-                        <iconify-icon icon="ep:arrow-down-bold"></iconify-icon>
-                      </div>
-                    </div>
-                    <li class="shopCollapse">
-                      <ul class="shopOpen active">
-                        <li class="d-flex align-items-center All">
-                          <input type="radio" id="All" name="Categories" checked>
-                          <label for="All">All</label>
-                        </li>
-                        <li class="d-flex align-items-center freshFruit">
-                          <input type="radio" id="Fresh" name="Categories">
-                          <label for="Fresh">Phone</span></label>
-                        </li>
-                        <li class="d-flex align-items-center vegetable">
-                          <input type="radio" id="Vegetables" name="Categories">
-                          <label for="Vegetables">Laptop</label>
-                        </li>
-                        <li class="d-flex align-items-center cooking">
-                          <input type="radio" id="Cooking" name="Categories">
-                          <label for="Cooking">Cooking</label>
-                        </li>
-                      </ul>
+                </div>
+                <li class="shopCollapse">
+                  <ul class="shopOpen active">
+                    <li class="d-flex align-items-center All">
+                      <input type="radio" id="All" name="Categories" checked>
+                      <label for="All">All</label>
                     </li>
-                  </div>
-                  <!-- *All Categories Radio Buttons End Here-->
-                  <!-- *Price Range Slider Start Here -->
-                  <div class="priceBox">
-                    <div class="col-12 d-flex justify-content-between priceBtn">
-                      <span>Brand</span>
-                      <span>
-                        <iconify-icon icon="ep:arrow-down-bold"></iconify-icon>
-                      </span>
-                    </div>
-                    <li class="shopCollapse">
-                      <ul class="priceRangeOpen active">
-                        <li class="d-flex align-items-center All">
-                          <input type="radio" id="apple" name="Categories" checked>
-                          <label for="apple">Apple</label>
-                        </li>
-                        <li class="d-flex align-items-center freshFruit">
-                          <input type="radio" id="samsung" name="Categories">
-                          <label for="samsung">Samsung</label>
-                        </li>
-                      </ul>
+                    <li class="d-flex align-items-center freshFruit">
+                      <input type="radio" id="Fresh" name="Categories">
+                      <label for="Fresh">Phone</span></label>
                     </li>
-                  </div>
-                  <!-- *Price Range Slider End Here-->
-                </section>
-                <!-- *Filtering End Hear -->
+                    <li class="d-flex align-items-center vegetable">
+                      <input type="radio" id="Vegetables" name="Categories">
+                      <label for="Vegetables">Laptop</label>
+                    </li>
+                    <li class="d-flex align-items-center cooking">
+                      <input type="radio" id="Cooking" name="Categories">
+                      <label for="Cooking">Cooking</label>
+                    </li>
+                  </ul>
+                </li>
               </div>
-              <div class="col-lg-9">
-                <div class="row">
-                  <div class="col-lg-4 col-6 mt-4">
-                    <div class="product-card align-items-center justify-content-center">
-                      <a href="product-details.html">
-                        <div class="card_slider categoryCard position-relative">
-                          <div class="product-img">
-                            <img src="./assets/img/bark-phone-black.jpg" alt="Product 1">
-                          </div>
-                          <div class="product-img">
-                            <img src="./assets/img/bark-phone-black.jpg" alt="Product 1">
-                          </div>
-                          <div class="product-img">
-                            <img src="./assets/img/bark-phone-light-brown.jpg" alt="Product 1">
-                          </div>
-                        </div>
-                      </a>
-                      <div class="wishList-icon position-absolute">
-                        <i class="fa-regular fa-heart"></i>
-                      </div>
-                      <h3 class="product-title text-center"> iPhone 11</h3>
-                      <p class="product-brand text-center">Brand: Apple</p>
-                      <div class="product-icon text-center">
-                        <a href=""><i class="fa-brands fa-instagram"></i></a>
-                        <a href=""><i class="fa-brands fa-facebook"></i></a>
-                        <a href=""><i class="fa-brands fa-tiktok"></i></a>
-                      </div>
-                      <p class="product-category text-center">Category: Apparel</p>
-                    </div>
-                  </div>
-                  <div class="col-lg-4 col-6 mt-4">
-                    <a href="product-details.html">
-                      <div class="product-card align-items-center justify-content-center">
-                        <div class="card_slider">
-                          <div class="product-img">
-                            <img src="./assets/img/bark-phone-blue.jpg" alt="Product 1">
-                          </div>
-                          <div class="product-img">
-                            <img src="./assets/img/bark-phone-light-brown.jpg" alt="Product 1">
-                          </div>
-                          <div class="product-img">
-                            <img src="./assets/img/bark-phone-black.jpg" alt="Product 1">
-                          </div>
-                        </div>
-                        <h3 class="product-title text-center"> iPhone 12</h3>
-                        <p class="product-brand text-center">Brand: Apple</p>
-                        <div class="product-icon text-center">
-                          <i class="fa-brands fa-instagram"></i>
-                          <i class="fa-brands fa-facebook"></i>
-                          <i class="fa-brands fa-tiktok"></i>
-                        </div>
-                        <p class="product-category text-center">Category: Apparel</p>
-                      </div>
-                    </a>
-                  </div>
-                  <div class="col-lg-4 col-6 mt-4">
-                    <a href="product-details.html">
-                      <div class="product-card align-items-center justify-content-center">
-                        <div class="card_slider">
-                  
-                          <div class="product-img">
-                            <img src="./assets/img/bark-phone-light-brown.jpg" alt="Product 1">
-                          </div>
-                          <div class="product-img">
-                            <img src="./assets/img/bark-phone-black.jpg" alt="Product 1">
-                          </div>
-                          <div class="product-img">
-                            <img src="./assets/img/bark-phone-blue.jpg" alt="Product 1">
-                          </div>
-                        </div>
-                        <h3 class="product-title text-center"> iPhone 13</h3>
-                        <p class="product-brand text-center">Brand: Apple</p>
-                        <div class="product-icon text-center">
-                          <i class="fa-brands fa-instagram"></i>
-                          <i class="fa-brands fa-facebook"></i>
-                          <i class="fa-brands fa-tiktok"></i>
-                        </div>
-                        <p class="product-category text-center">Category: Apparel</p>
-                      </div>
-                    </a>
-                  </div>
-                  <div class="col-lg-4 col-6 mt-4">
-                    <a href="">
-                      <div class="product-card align-items-center justify-content-center">
-                        <div class="card_slider">
-                          <div class="product-img">
-                            <img src="./assets/img/bark-phone-black.jpg" alt="Product 1">
-                          </div>
-                          <div class="product-img">
-                            <img src="./assets/img/bark-phone-light-brown.jpg" alt="Product 1">
-                          </div>
-                          <div class="product-img">
-                            <img src="./assets/img/bark-phone-blue.jpg" alt="Product 1">
-                          </div>
-                        </div>
-                        <h3 class="product-title text-center"> iPhone 14</h3>
-                        <p class="product-brand text-center">Brand: Apple</p>
-                        <div class="product-icon text-center">
-                          <i class="fa-brands fa-instagram"></i>
-                          <i class="fa-brands fa-facebook"></i>
-                          <i class="fa-brands fa-tiktok"></i>
-                        </div>
-                        <p class="product-category text-center">Category: Apparel</p>
-                      </div>
-                    </a>
-                  </div>
-                  <div class="col-lg-4 col-6 mt-4">
-                    <a href="">
-                      <div class="product-card align-items-center justify-content-center">
-                        <div class="card_slider categoryCard">
-                          <div class="product-img">
-                            <img src="./assets/img/bark-phone-blue.jpg" alt="Product 1">
-                          </div>
-                          <div class="product-img">
-                            <img src="./assets/img/bark-phone-black.jpg" alt="Product 1">
-                          </div>
-                          <div class="product-img">
-                            <img src="./assets/img/bark-phone-light-brown.jpg" alt="Product 1">
-                          </div>
-                        </div>
-                        <h3 class="product-title text-center"> iPhone 15</h3>
-                        <p class="product-brand text-center">Brand: Apple</p>
-                        <div class="product-icon text-center">
-                          <i class="fa-brands fa-instagram"></i>
-                          <i class="fa-brands fa-facebook"></i>
-                          <i class="fa-brands fa-tiktok"></i>
-                        </div>
-                        <p class="product-category text-center">Category: Apparel</p>
-                      </div>
-                    </a>
-                  </div>
-                  <div class="col-lg-4 col-6 mt-4">
-                    <a href="">
-                      <div class="product-card align-items-center justify-content-center">
-                        <div class="card_slider">
-                          <div class="product-img">
-                            <img src="./assets/img/bark-phone-blue.jpg" alt="Product 1">
-                          </div>
-                          <div class="product-img">
-                            <img src="./assets/img/bark-phone-light-brown.jpg" alt="Product 1">
-                          </div>
-                          <div class="product-img">
-                            <img src="./assets/img/bark-phone-black.jpg" alt="Product 1">
-                          </div>
-                        </div>
-                        <h3 class="product-title text-center"> iPhone 16</h3>
-                        <p class="product-brand text-center">Brand: Apple</p>
-                        <div class="product-icon text-center">
-                          <i class="fa-brands fa-instagram"></i>
-                          <i class="fa-brands fa-facebook"></i>
-                          <i class="fa-brands fa-tiktok"></i>
-                        </div>
-                        <p class="product-category text-center">Category: Apparel</p>
-                      </div>
-                    </a>
-                  </div>
-                  <div class="col-lg-4 col-6 mt-4">
-                    <a href="">
-                      <div class="product-card align-items-center justify-content-center">
-                        <div class="card_slider">
-                  
-                          <div class="product-img">
-                            <img src="./assets/img/bark-phone-light-brown.jpg" alt="Product 1">
-                          </div>
-                          <div class="product-img">
-                            <img src="./assets/img/bark-phone-black.jpg" alt="Product 1">
-                          </div>
-                          <div class="product-img">
-                            <img src="./assets/img/bark-phone-blue.jpg" alt="Product 1">
-                          </div>
-                        </div>
-                        <h3 class="product-title text-center"> iPhone 13</h3>
-                        <p class="product-brand text-center">Brand: Apple</p>
-                        <div class="product-icon text-center">
-                          <i class="fa-brands fa-instagram"></i>
-                          <i class="fa-brands fa-facebook"></i>
-                          <i class="fa-brands fa-tiktok"></i>
-                        </div>
-                        <p class="product-category text-center">Category: Apparel</p>
-                      </div>
-                    </a>
-                  </div>
-                  <div class="col-lg-4 col-6 mt-4">
-                    <a href="">
-                      <div class="product-card align-items-center justify-content-center">
-                        <div class="card_slider">
-                          <div class="product-img">
-                            <img src="./assets/img/bark-phone-black.jpg" alt="Product 1">
-                          </div>
-                          <div class="product-img">
-                            <img src="./assets/img/bark-phone-light-brown.jpg" alt="Product 1">
-                          </div>
-                          <div class="product-img">
-                            <img src="./assets/img/bark-phone-blue.jpg" alt="Product 1">
-                          </div>
-                        </div>
-                        <h3 class="product-title text-center"> iPhone 13</h3>
-                        <p class="product-brand text-center">Brand: Apple</p>
-                        <div class="product-icon text-center">
-                          <i class="fa-brands fa-instagram"></i>
-                          <i class="fa-brands fa-facebook"></i>
-                          <i class="fa-brands fa-tiktok"></i>
-                        </div>
-                        <p class="product-category text-center">Category: Apparel</p>
-                      </div>
-                    </a>
-                  </div>
+              <!-- *All Categories Radio Buttons End Here-->
+              <!-- *Price Range Slider Start Here -->
+              <div class="priceBox">
+                <div class="col-12 d-flex justify-content-between priceBtn">
+                  <span>Brand</span>
+                  <span>
+                    <iconify-icon icon="ep:arrow-down-bold"></iconify-icon>
+                  </span>
+                </div>
+                <li class="shopCollapse">
+                  <ul class="priceRangeOpen active">
+                    <li class="d-flex align-items-center All">
+                      <input type="radio" id="apple" name="Categories" checked>
+                      <label for="apple">Apple</label>
+                    </li>
+                    <li class="d-flex align-items-center freshFruit">
+                      <input type="radio" id="samsung" name="Categories">
+                      <label for="samsung">Samsung</label>
+                    </li>
+                  </ul>
+                </li>
+              </div>
+              <!-- *Price Range Slider End Here-->
+            </section>
+            <!-- *Filtering End Hear -->
+          </div>
+          <div class="col-lg-9">
+            <!-- Sort By Filter -->
+            <div class="row d-flex align-items-center">
+              <div class="col-9">
+                <div class="sort-by-filter">
+                  <label for="sort_by">Sort by:</label>
+                  <select id="sort_by" name="sort_by" onchange="console.log(this.value)">
+                    <option value="" disabled selected>Select</option>
+                    <option value="newest">Newest</option>
+                    <option value="oldest">Oldest</option>
+                    <option value="price_low_high">Price: Low to High</option>
+                    <option value="price_high_low">Price: High to Low</option>
+                    <option value="name_a_z">Name: A to Z</option>
+                    <option value="name_z_a">Name: Z to A</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-3 d-lg-none d-md-block d-sm-block text-end">
+                <div class="mobilefilterBtn">
+                  <span data-bs-toggle="offcanvas" data-bs-target="#mobileFilterOffcanvas"
+                    aria-controls="mobileFilterOffcanvas" aria-label="Open filter panel">
+                    <iconify-icon icon="rivet-icons:filter" width="20" height="20"></iconify-icon>
+                  </span>
                 </div>
               </div>
             </div>
+            <div class="row">
+              <div class="col-lg-4 col-6 mt-4">
+                <div class="product-card align-items-center justify-content-center">
+                  <a href="product-details.html">
+                    <div class="card_slider categoryCard position-relative">
+                      <div class="product-img">
+                        <img src="./assets/img/bark-phone-black.jpg" alt="Product 1">
+                      </div>
+                      <div class="product-img">
+                        <img src="./assets/img/bark-phone-black.jpg" alt="Product 1">
+                      </div>
+                      <div class="product-img">
+                        <img src="./assets/img/bark-phone-light-brown.jpg" alt="Product 1">
+                      </div>
+                    </div>
+                  </a>
+                  <div class="wishList-icon position-absolute">
+                    <i class="fa-regular fa-heart"></i>
+                  </div>
+                  <h3 class="product-title text-center"> iPhone 11</h3>
+                  <p class="product-brand text-center">Brand: Apple</p>
+                  <div class="product-icon text-center">
+                    <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    <a href=""><i class="fa-brands fa-facebook"></i></a>
+                    <a href=""><i class="fa-brands fa-tiktok"></i></a>
+                  </div>
+                  <p class="product-category text-center">Category: Apparel</p>
+                </div>
+              </div>
+              <div class="col-lg-4 col-6 mt-4">
+                <a href="product-details.html">
+                  <div class="product-card align-items-center justify-content-center">
+                    <div class="card_slider">
+                      <div class="product-img">
+                        <img src="./assets/img/bark-phone-blue.jpg" alt="Product 1">
+                      </div>
+                      <div class="product-img">
+                        <img src="./assets/img/bark-phone-light-brown.jpg" alt="Product 1">
+                      </div>
+                      <div class="product-img">
+                        <img src="./assets/img/bark-phone-black.jpg" alt="Product 1">
+                      </div>
+                    </div>
+                    <h3 class="product-title text-center"> iPhone 12</h3>
+                    <p class="product-brand text-center">Brand: Apple</p>
+                    <div class="product-icon text-center">
+                      <i class="fa-brands fa-instagram"></i>
+                      <i class="fa-brands fa-facebook"></i>
+                      <i class="fa-brands fa-tiktok"></i>
+                    </div>
+                    <p class="product-category text-center">Category: Apparel</p>
+                  </div>
+                </a>
+              </div>
+              <div class="col-lg-4 col-6 mt-4">
+                <a href="product-details.html">
+                  <div class="product-card align-items-center justify-content-center">
+                    <div class="card_slider">
+
+                      <div class="product-img">
+                        <img src="./assets/img/bark-phone-light-brown.jpg" alt="Product 1">
+                      </div>
+                      <div class="product-img">
+                        <img src="./assets/img/bark-phone-black.jpg" alt="Product 1">
+                      </div>
+                      <div class="product-img">
+                        <img src="./assets/img/bark-phone-blue.jpg" alt="Product 1">
+                      </div>
+                    </div>
+                    <h3 class="product-title text-center"> iPhone 13</h3>
+                    <p class="product-brand text-center">Brand: Apple</p>
+                    <div class="product-icon text-center">
+                      <i class="fa-brands fa-instagram"></i>
+                      <i class="fa-brands fa-facebook"></i>
+                      <i class="fa-brands fa-tiktok"></i>
+                    </div>
+                    <p class="product-category text-center">Category: Apparel</p>
+                  </div>
+                </a>
+              </div>
+              <div class="col-lg-4 col-6 mt-4">
+                <a href="">
+                  <div class="product-card align-items-center justify-content-center">
+                    <div class="card_slider">
+                      <div class="product-img">
+                        <img src="./assets/img/bark-phone-black.jpg" alt="Product 1">
+                      </div>
+                      <div class="product-img">
+                        <img src="./assets/img/bark-phone-light-brown.jpg" alt="Product 1">
+                      </div>
+                      <div class="product-img">
+                        <img src="./assets/img/bark-phone-blue.jpg" alt="Product 1">
+                      </div>
+                    </div>
+                    <h3 class="product-title text-center"> iPhone 14</h3>
+                    <p class="product-brand text-center">Brand: Apple</p>
+                    <div class="product-icon text-center">
+                      <i class="fa-brands fa-instagram"></i>
+                      <i class="fa-brands fa-facebook"></i>
+                      <i class="fa-brands fa-tiktok"></i>
+                    </div>
+                    <p class="product-category text-center">Category: Apparel</p>
+                  </div>
+                </a>
+              </div>
+              <div class="col-lg-4 col-6 mt-4">
+                <a href="">
+                  <div class="product-card align-items-center justify-content-center">
+                    <div class="card_slider categoryCard">
+                      <div class="product-img">
+                        <img src="./assets/img/bark-phone-blue.jpg" alt="Product 1">
+                      </div>
+                      <div class="product-img">
+                        <img src="./assets/img/bark-phone-black.jpg" alt="Product 1">
+                      </div>
+                      <div class="product-img">
+                        <img src="./assets/img/bark-phone-light-brown.jpg" alt="Product 1">
+                      </div>
+                    </div>
+                    <h3 class="product-title text-center"> iPhone 15</h3>
+                    <p class="product-brand text-center">Brand: Apple</p>
+                    <div class="product-icon text-center">
+                      <i class="fa-brands fa-instagram"></i>
+                      <i class="fa-brands fa-facebook"></i>
+                      <i class="fa-brands fa-tiktok"></i>
+                    </div>
+                    <p class="product-category text-center">Category: Apparel</p>
+                  </div>
+                </a>
+              </div>
+              <div class="col-lg-4 col-6 mt-4">
+                <a href="">
+                  <div class="product-card align-items-center justify-content-center">
+                    <div class="card_slider">
+                      <div class="product-img">
+                        <img src="./assets/img/bark-phone-blue.jpg" alt="Product 1">
+                      </div>
+                      <div class="product-img">
+                        <img src="./assets/img/bark-phone-light-brown.jpg" alt="Product 1">
+                      </div>
+                      <div class="product-img">
+                        <img src="./assets/img/bark-phone-black.jpg" alt="Product 1">
+                      </div>
+                    </div>
+                    <h3 class="product-title text-center"> iPhone 16</h3>
+                    <p class="product-brand text-center">Brand: Apple</p>
+                    <div class="product-icon text-center">
+                      <i class="fa-brands fa-instagram"></i>
+                      <i class="fa-brands fa-facebook"></i>
+                      <i class="fa-brands fa-tiktok"></i>
+                    </div>
+                    <p class="product-category text-center">Category: Apparel</p>
+                  </div>
+                </a>
+              </div>
+              <div class="col-lg-4 col-6 mt-4">
+                <a href="">
+                  <div class="product-card align-items-center justify-content-center">
+                    <div class="card_slider">
+
+                      <div class="product-img">
+                        <img src="./assets/img/bark-phone-light-brown.jpg" alt="Product 1">
+                      </div>
+                      <div class="product-img">
+                        <img src="./assets/img/bark-phone-black.jpg" alt="Product 1">
+                      </div>
+                      <div class="product-img">
+                        <img src="./assets/img/bark-phone-blue.jpg" alt="Product 1">
+                      </div>
+                    </div>
+                    <h3 class="product-title text-center"> iPhone 13</h3>
+                    <p class="product-brand text-center">Brand: Apple</p>
+                    <div class="product-icon text-center">
+                      <i class="fa-brands fa-instagram"></i>
+                      <i class="fa-brands fa-facebook"></i>
+                      <i class="fa-brands fa-tiktok"></i>
+                    </div>
+                    <p class="product-category text-center">Category: Apparel</p>
+                  </div>
+                </a>
+              </div>
+              <div class="col-lg-4 col-6 mt-4">
+                <a href="">
+                  <div class="product-card align-items-center justify-content-center">
+                    <div class="card_slider">
+                      <div class="product-img">
+                        <img src="./assets/img/bark-phone-black.jpg" alt="Product 1">
+                      </div>
+                      <div class="product-img">
+                        <img src="./assets/img/bark-phone-light-brown.jpg" alt="Product 1">
+                      </div>
+                      <div class="product-img">
+                        <img src="./assets/img/bark-phone-blue.jpg" alt="Product 1">
+                      </div>
+                    </div>
+                    <h3 class="product-title text-center"> iPhone 13</h3>
+                    <p class="product-brand text-center">Brand: Apple</p>
+                    <div class="product-icon text-center">
+                      <i class="fa-brands fa-instagram"></i>
+                      <i class="fa-brands fa-facebook"></i>
+                      <i class="fa-brands fa-tiktok"></i>
+                    </div>
+                    <p class="product-category text-center">Category: Apparel</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <!-- Pagination Start -->
+            <nav aria-label="Page navigation example" class="d-flex justify-content-center mt-5">
+              <ul class="pagination pagination-custom">
+                <li class="page-item">
+                  <a class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                  </a>
+                </li>
+                <li class="page-item active" aria-current="page">
+                  <a class="page-link" href="#">1</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+            <!-- Pagination End -->
           </div>
-        </section>
+        </div>
+      </div>
+    </section>
     <!-- Product Section -->
+    <!-- Mobile filter -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileFilterOffcanvas" aria-labelledby="mobileFilterLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="mobileFilterLabel">Filter Products</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <!-- তোমার দেওয়া ফিল্টার সেকশন এখানে বসবে -->
+
+        <section id="filtering" style="padding: 20px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+
+          <!-- Categories Filter -->
+          <div class="filter-section category-filter">
+            <div class="filter-header d-flex justify-content-between align-items-center mb-3 toggle-btn-category"
+              style="cursor:pointer;">
+              <h6 class="fw-bold mb-0">Categories</h6>
+              <iconify-icon icon="ep:arrow-down-bold" width="20" height="20"></iconify-icon>
+            </div>
+
+            <ul class="list-unstyled ps-0 category-list">
+              <li class="d-flex align-items-center mb-3">
+                <input type="radio" id="All" name="category" checked style="cursor: pointer;">
+                <label for="All" class="ms-2 mb-0" style="cursor: pointer;">All</label>
+              </li>
+              <li class="d-flex align-items-center mb-3">
+                <input type="radio" id="Phone" name="category" style="cursor: pointer;">
+                <label for="Phone" class="ms-2 mb-0" style="cursor: pointer;">Phone</label>
+              </li>
+              <li class="d-flex align-items-center mb-3">
+                <input type="radio" id="Laptop" name="category" style="cursor: pointer;">
+                <label for="Laptop" class="ms-2 mb-0" style="cursor: pointer;">Laptop</label>
+              </li>
+              <li class="d-flex align-items-center mb-3">
+                <input type="radio" id="Gaming" name="category" style="cursor: pointer;">
+                <label for="Gaming" class="ms-2 mb-0" style="cursor: pointer;">Gaming</label>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Brand Filter -->
+          <div class="filter-section brand-filter">
+            <div class="filter-header d-flex justify-content-between align-items-center mb-3 toggle-btn-brand"
+              style="cursor:pointer;">
+              <h6 class="fw-bold mb-0">Brand</h6>
+              <iconify-icon icon="ep:arrow-down-bold" width="20" height="20"></iconify-icon>
+            </div>
+
+            <ul class="list-unstyled ps-0 brand-list">
+              <li class="d-flex align-items-center mb-3">
+                <input type="radio" id="apple" name="brand" checked>
+                <label for="apple" class="ms-2 mb-0" style="cursor:pointer;">Apple</label>
+              </li>
+              <li class="d-flex align-items-center mb-3">
+                <input type="radio" id="google" name="brand" checked>
+                <label for="google" class="ms-2 mb-0" style="cursor:pointer;">Google</label>
+              </li>
+              <li class="d-flex align-items-center mb-3">
+                <input type="radio" id="Tesla" name="brand" checked>
+                <label for="Tesla" class="ms-2 mb-0" style="cursor:pointer;">Tesla</label>
+              </li>
+            </ul>
+          </div>
+
+
+
+        </section>
+
+
+      </div>
+    </div>
+
   </main>
+  <!-- Main  Area End Here -->
+  <!--FOOTER STARTS -->
   <footer>
     <!-- Footer Start -->
     <footer class="footer">
@@ -375,7 +659,9 @@
           <!-- About Glame -->
           <div class="col-lg-3 col-md-6 mb-4 mb-sm-1 mb-lg-0">
             <h5>About Glame</h5>
-            <p>Morbi cursus porttitor enim lobortis molestie. Duis gravida turpis dui, eget bibendum magna.
+            <p>
+              Morbi cursus porttitor enim lobortis molestie. Duis gravida
+              turpis dui, eget bibendum magna.
             </p>
             <div class="contact-info">
               <a href="tel:(219) 555-0114">(219) 555-0114</a>
@@ -423,14 +709,14 @@
           <div class="footerInsta col-lg-3 col-md-6 col-6">
             <h5>Instagram</h5>
             <div class="instagram-feed">
-              <img src="./assets/img/insta/Image (1).png" alt="Instagram post">
-              <img src="./assets/img/insta/Image (2).png" alt="Instagram post">
-              <img src="./assets/img/insta/Image (3).png" alt="Instagram post">
-              <img src="./assets/img/insta/Image (4).png" alt="Instagram post">
-              <img src="./assets/img/insta/Image (5).png" alt="Instagram post">
-              <img src="./assets/img/insta/Image.png" alt="Instagram post">
-              <img src="./assets/img/insta/Image (4).png" alt="Instagram post">
-              <img src="./assets/img/insta/Image (5).png" alt="Instagram post">
+              <img src="./assets/img/insta/Image (1).png" alt="Instagram post" />
+              <img src="./assets/img/insta/Image (2).png" alt="Instagram post" />
+              <img src="./assets/img/insta/Image (3).png" alt="Instagram post" />
+              <img src="./assets/img/insta/Image (4).png" alt="Instagram post" />
+              <img src="./assets/img/insta/Image (5).png" alt="Instagram post" />
+              <img src="./assets/img/insta/Image.png" alt="Instagram post" />
+              <img src="./assets/img/insta/Image (4).png" alt="Instagram post" />
+              <img src="./assets/img/insta/Image (5).png" alt="Instagram post" />
             </div>
           </div>
         </div>
@@ -450,10 +736,10 @@
             </div>
           </div>
           <div class="payment-methods col-lg-4 col-md-4 col-6 text-end">
-            <img class="img-fluid" src="./assets/img/Payment Method.png" alt="">
+            <img class="img-fluid" src="./assets/img/Payment Method.png" alt="" />
           </div>
         </div>
-        <div class="copyright copyrightLast col-12  text-center d-lg-none d-md-none d-sm-block">
+        <div class="copyright copyrightLast col-12 text-center d-lg-none d-md-none d-sm-block">
           <p>@rafikuldev. All Rights Reserved.</p>
         </div>
       </div>
@@ -462,14 +748,12 @@
     <!-- MOBILE FOOTER ENDS -->
   </footer>
 
-  <script src="./assets/js/jquery-1.11.0.min.js"></script>
-  <script src="./assets/js/jquery-migrate-1.2.1.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"
     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   <script src="./assets/js/iconify-icon.min.js"></script>
   <script src="./assets/js/script.js"></script>
   <script src="./assets/js/bootstrap.min.js"></script>
-  </body>
-  
-  </html>
+</body>
+
+</html>
