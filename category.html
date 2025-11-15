@@ -17,46 +17,99 @@
 </head>
 
 <body>
-  <nav id="nav" class="navbar navbar-expand-lg sticky-top">
+  <!-- Navbar Start -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
     <div class="container">
+  
       <a class="navbar-brand" href="./index.html">Glame Demo</a>
-      <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span>
-          <i class="fa-solid fa-align-right"></i>
-        </span>
-      </button> -->
-      <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="toggler-icon">
-          <i class="fa-solid fa-align-right"></i>
-        </span>
+  
+      <!-- Mobile toggler (visible only on small devices) -->
+      <button class="btn d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu"
+        aria-controls="offcanvasMenu" aria-label="Toggle navigation">
+        <i class="fa-solid fa-align-right"></i>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
+  
+      <!-- Desktop menu (visible from lg up) -->
+      <div class="collapse navbar-collapse d-none d-lg-flex" id="navbarNav">
         <ul class="navbar-nav ms-auto navigation justify-content-center">
           <li class="nav-item"><a class="nav-link active" href="./index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="./category.html">Category</a></li>
           <li class="nav-item"><a class="nav-link" href="./contact.html">Contact Us</a></li>
           <li class="nav-item"><a class="nav-link" href="./about-us.html">About Us</a></li>
         </ul>
+  
         <ul class="navbar-nav ms-auto flex-row">
           <li class="nav-item me-3">
             <a class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#searchOffcanvas" href="#">
               <i class="fa-solid fa-magnifying-glass"></i>
             </a>
           </li>
-
+  
           <li class="nav-item me-3">
-            <a class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#wishlistOffcanvas" href="">
+            <a class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#wishlistOffcanvas" href="#">
               <i class="fa-regular fa-heart"></i>
             </a>
           </li>
-          <li class="nav-item"><a class="nav-link" href="./login.html"><i class="fa-regular fa-user"></i></a>
+  
+          <li class="nav-item">
+            <a class="nav-link" href="./login.html"><i class="fa-regular fa-user"></i></a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
+  
+  <!-- Offcanvas Menu for Mobile -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel"
+    style="width: 280px;">
+    <div class="offcanvas-header border-bottom">
+      <h5 class="offcanvas-title fw-bold" id="offcanvasMenuLabel">Menu</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+  
+    <div class="offcanvas-body p-0 d-flex flex-column justify-content-between" style="height: calc(100vh - 56px);">
+      <!-- Navigation Links -->
+      <ul class="navbar-nav px-3 pt-3">
+        <li class="nav-item mb-2">
+          <a class="nav-link fs-5" href="./index.html">Home</a>
+        </li>
+        <li class="nav-item mb-2">
+          <a class="nav-link fs-5" href="./category.html">Category</a>
+        </li>
+        <li class="nav-item mb-2">
+          <a class="nav-link fs-5" href="./contact.html">Contact Us</a>
+        </li>
+        <li class="nav-item mb-2">
+          <a class="nav-link fs-5" href="./about-us.html">About Us</a>
+        </li>
+      </ul>
+  
+      <!-- <hr class="my-0" /> -->
+  
+      <!-- Bottom Icons Section -->
+      <ul class="navbar-nav flex-row justify-content-center px-3 py-3 gap-4 border-top">
+        <li class="nav-item">
+          <a class="nav-link fs-4 text-dark" data-bs-toggle="offcanvas" data-bs-target="#searchOffcanvas" href="#"
+            aria-label="Search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link fs-4 text-dark" data-bs-toggle="offcanvas" data-bs-target="#wishlistOffcanvas" href="#"
+            aria-label="Wishlist">
+            <i class="fa-regular fa-heart"></i>
+          </a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link fs-4 text-dark" href="./login.html" aria-label="User Login">
+            <i class="fa-regular fa-user"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
 
   <!-- searchOffcanvas -->
   <div class="offcanvas offcanvas-end" tabindex="-1" id="searchOffcanvas">
