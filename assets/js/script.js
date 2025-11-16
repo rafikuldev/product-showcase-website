@@ -27,6 +27,16 @@ $(document).ready(function () {
     cssEase: 'linear',
     arrows: false,
   });
+  $(".productImg").slick({
+    dots: false,
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  });
 });
 // End of recent edits
 // About Us page js
@@ -224,4 +234,7 @@ document.querySelector('.toggle-btn-brand').addEventListener('click', function()
   const icon = this.querySelector('iconify-icon');
   icon.classList.toggle('rotated');
 });
+
+
+
 
