@@ -4,226 +4,264 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shop Profile - Raymour</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    body {
-      background-color: #f9fafb;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
-    }
-
-    .banner {
-      height: 200px;
-      overflow: hidden;
-      background-color: #e0e0e0;
-    }
-
-    .banner img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .profile-section {
-      margin-top: -80px;
-      position: relative;
-      z-index: 10;
-      margin-bottom: 32px;
-    }
-
-    .shop-logo {
-      width: 80px;
-      height: 80px;
-      background-color: #000;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-size: 28px;
-      font-weight: bold;
-      flex-shrink: 0;
-    }
-
-    .shop-name {
-      font-size: 24px;
-      font-weight: bold;
-      color: #1a1a1a;
-      margin-bottom: 4px;
-    }
-
-    .shop-description {
-      color: #666;
-      font-size: 14px;
-      margin-bottom: 12px;
-    }
-
-    .social-icons {
-      display: flex;
-      gap: 12px;
-    }
-
-    .social-icon {
-      width: 20px;
-      height: 20px;
-      cursor: pointer;
-      transition: transform 0.2s;
-    }
-
-    .social-icon:hover {
-      transform: scale(1.1);
-    }
-
-    .shop-details {
-      border-top: 1px solid #e0e0e0;
-      padding-top: 24px;
-    }
-
-    .detail-item h6 {
-      font-size: 12px;
-      font-weight: 600;
-      color: #666;
-      margin-bottom: 8px;
-    }
-
-    .detail-item p {
-      font-size: 14px;
-      color: #333;
-      margin: 0;
-    }
-
-    .product-card {
-      border: 1px solid #e5e7eb;
-      border-radius: 8px;
-      overflow: hidden;
-      transition: box-shadow 0.2s;
-    }
-
-    .product-card:hover {
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    }
-
-    .product-image {
-      height: 180px;
-      background-color: #f5f5f5;
-      overflow: hidden;
-    }
-
-    .product-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .product-body {
-      padding: 12px;
-    }
-
-    .product-title {
-      font-size: 14px;
-      font-weight: 600;
-      margin-bottom: 8px;
-      color: #1a1a1a;
-    }
-
-    .rating {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      margin-bottom: 8px;
-      font-size: 12px;
-    }
-
-    .stars {
-      color: #fbbf24;
-    }
-
-    .review-count {
-      color: #666;
-    }
-
-    .product-price {
-      font-size: 16px;
-      font-weight: 600;
-      color: #ef4444;
-      margin-bottom: 12px;
-    }
-
-    .add-to-cart-btn {
-      width: 100%;
-      padding: 8px;
-      background-color: #06b6d4;
-      color: #fff;
-      border: none;
-      border-radius: 4px;
-      font-size: 12px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background-color 0.2s;
-    }
-
-    .add-to-cart-btn:hover {
-      background-color: #0891b2;
-    }
-  </style>
+  <title>Pastel Bloom Boutique</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+  <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
-  <!-- Banner -->
-  <div class="banner">
-    <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&h=200&fit=crop" alt="Shop banner">
-  </div>
-
-  <!-- Profile Section -->
-  <div class="profile-section">
+  <!-- Navbar Start -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
     <div class="container">
-      <div class="row g-4">
-        <!-- Shop Info -->
-        <div class="col-12 col-md-12">
-          <div class="card shadow-sm p-4">
-            <!-- Logo and Shop Details -->
-            <div class="d-flex gap-3 mb-4">
-              <div class="shop-logo">R</div>
-              <div style="flex: 1;">
-                <h1 class="shop-name">Raymour</h1>
-                <p class="shop-description">Home of modern & stylish furniture</p>
-                <div class="social-icons">
-                  <svg class="social-icon" style="color: #0066cc;" fill="currentColor" viewBox="0 0 24 24">
-                    <path
-                      d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-                  </svg>
-                  <svg class="social-icon" style="color: #1da1f2;" fill="currentColor" viewBox="0 0 24 24">
-                    <path
-                      d="M23.953 4.57a10 10 0 002.856-3.51 10 10 0 01-2.836.79 5 5 0 00-8.651-2.986 5.025 5.025 0 00-1.625 5.726m-7.193 7.1a7.001 7.001 0 1113.993 0m0 0a4 4 0 100-5.657"
-                      stroke="currentColor" stroke-width="2" fill="none" />
-                  </svg>
-                  <svg class="social-icon" style="color: #dc2626;" fill="currentColor" viewBox="0 0 24 24">
-                    <path
-                      d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.551 9.376.551 9.376.551s7.505 0 9.377-.551a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-                  </svg>
+
+      <a class="navbar-brand" href="./index.html">Glame Demo</a>
+
+      <!-- Mobile toggler (visible only on small devices) -->
+      <button class="btn mobileMenuButton d-lg-none" type="button" data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu" aria-label="Toggle navigation">
+        <i class="fa-solid fa-align-right"></i>
+      </button>
+
+      <!-- Desktop menu (visible from lg up) -->
+      <div class="collapse navbar-collapse d-none d-lg-flex" id="navbarNav">
+        <ul class="navbar-nav ms-auto navigation justify-content-center">
+          <li class="nav-item"><a class="nav-link active" href="./index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="./category.html">Category</a></li>
+          <li class="nav-item"><a class="nav-link" href="./contact.html">Contact Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="./about-us.html">About Us</a></li>
+        </ul>
+
+        <ul class="navbar-nav ms-auto flex-row">
+          <li class="nav-item me-3">
+            <a class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#searchOffcanvas" href="#">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </a>
+          </li>
+
+          <li class="nav-item me-3">
+            <a class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#wishlistOffcanvas" href="#">
+              <i class="fa-regular fa-heart"></i>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="./login.html"><i class="fa-regular fa-user"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Offcanvas Menu for Mobile -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel"
+    style="width: 280px;">
+    <div class="offcanvas-header border-bottom">
+      <h5 class="offcanvas-title fw-bold" id="offcanvasMenuLabel">Menu</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+
+    <div class="offcanvas-body p-0 d-flex flex-column justify-content-between" style="height: calc(100vh - 56px);">
+      <!-- Navigation Links -->
+      <ul class="navbar-nav px-3 pt-3">
+        <li class="nav-item mb-2">
+          <a class="nav-link fs-5" href="./index.html">Home</a>
+        </li>
+        <li class="nav-item mb-2">
+          <a class="nav-link fs-5" href="./category.html">Category</a>
+        </li>
+        <li class="nav-item mb-2">
+          <a class="nav-link fs-5" href="./contact.html">Contact Us</a>
+        </li>
+        <li class="nav-item mb-2">
+          <a class="nav-link fs-5" href="./about-us.html">About Us</a>
+        </li>
+      </ul>
+
+      <!-- <hr class="my-0" /> -->
+
+      <!-- Bottom Icons Section -->
+      <ul class="navbar-nav flex-row justify-content-center px-3 py-3 gap-4 border-top">
+        <li class="nav-item">
+          <a class="nav-link fs-4 text-dark" data-bs-toggle="offcanvas" data-bs-target="#searchOffcanvas" href="#"
+            aria-label="Search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link fs-4 text-dark" data-bs-toggle="offcanvas" data-bs-target="#wishlistOffcanvas" href="#"
+            aria-label="Wishlist">
+            <i class="fa-regular fa-heart"></i>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link fs-4 text-dark" href="./login.html" aria-label="User Login">
+            <i class="fa-regular fa-user"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- searchOffcanvas -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="searchOffcanvas">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title">Search</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+    </div>
+
+    <div class="offcanvas-body">
+
+      <div class="search-box position-relative">
+        <input type="text" class="form-control search-input" placeholder="Type to search...">
+        <button class="search-btn">
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+
+      <!-- Product Preview Section -->
+      <div class="product-preview mt-4">
+        <div class="product-card d-flex align-items-center p-3 rounded-4 shadow-sm">
+          <img src="assets/img/bark-phone-light-brown.jpg" class="rounded-3 me-3" width="70" height="70" alt="Product">
+          <div class="flex-grow-1">
+            <h6 class="mb-1 fw-semibold">iPhone 12</h6>
+            <p class="text-muted small mb-1">Apple</p>
+          </div>
+        </div>
+      </div>
+      <div class="product-preview mt-4">
+        <div class="product-card d-flex align-items-center p-3 rounded-4 shadow-sm">
+          <img src="assets/img/bark-phone-black.jpg" class="rounded-3 me-3" width="70" height="70" alt="Product">
+          <div class="flex-grow-1">
+            <h6 class="mb-1 fw-semibold">iPhone 12</h6>
+            <p class="text-muted small mb-1">Apple</p>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+  <!-- wishlistOffcanvas -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="wishlistOffcanvas">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title">Your Wishlist</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+    </div>
+
+    <div class="offcanvas-body">
+
+      <!-- <div class="wishlist-empty text-center py-5">
+        <iconify-icon icon="mdi:heart-outline" width="48" height="48"></iconify-icon>
+        <p class="mt-3 text-muted">No items in wishlist</p>
+      </div> -->
+
+      <!-- Wishlist Products -->
+      <div class="wishlist-items mt-3">
+
+        <!-- Single Wishlist Product -->
+        <div class="wishlist-card d-flex align-items-center p-3 mb-3 rounded-4">
+
+          <img src="assets/img/watch/albert-orange.jpg" class="rounded-3 me-3" width="70" height="70" alt="Product">
+
+          <div class="flex-grow-1">
+            <h6 class="mb-1 fw-semibold">Premium Leather Wallet</h6>
+            <p class="text-muted small mb-1">Handcrafted </p>
+          </div>
+
+          <!-- Delete Button -->
+          <button class="delete-btn ms-2">
+            <i class="fa-solid fa-trash"></i>
+          </button>
+
+        </div>
+
+        <!-- Another Product -->
+        <div class="wishlist-card d-flex align-items-center p-3 mb-3 rounded-4">
+
+          <img src="assets/img/watch/albert-white.jpg" class="rounded-3 me-3" width="70" height="70" alt="Product">
+
+          <div class="flex-grow-1">
+            <h6 class="mb-1 fw-semibold">Classic Wrist Watch</h6>
+            <p class="text-muted small mb-1">Minimal</p>
+          </div>
+
+          <!-- Delete Button -->
+          <button class="delete-btn ms-2">
+            <i class="fa-solid fa-trash"></i>
+          </button>
+
+        </div>
+
+      </div>
+
+
+    </div>
+  </div>
+
+  <main class="shop-page">
+
+    <!-- Banner -->
+    <div class="banner">
+      <img src="./assets/img/applebanner.webp" alt="Shop banner">
+    </div>
+    <!-- Profile Section -->
+    <div class="profile-section">
+      <div class="container">
+        <div class="row g-4">
+          <!-- Shop Info -->
+          <div class="col-12 col-md-12">
+            <div class="card shadow-sm p-4">
+              <!-- Logo and Shop Details -->
+              <div class="d-flex gap-3 mb-4">
+                <div class="shop-logo">
+                  <img class="img-fluid" style="border-radius: 50%;" src="./assets/img/apple.jpg" alt="">
+                </div>
+                <div style="flex: 1;">
+                  <h1 class="shop-name">Apple</h1>
+                  <p class="shop-description">Discover the innovative world of Apple and shop everything iPhone, iPad,
+                    Apple Watch, Mac, and Apple TV</p>
+                  <div class="social-icons">
+                    <span>
+                      <i class="fa-brands fa-facebook"></i>
+                    </span>
+                    <span>
+                      <i class="fa-brands fa-twitter"></i>
+                    </span>
+                    <span>
+                      <i class="fa-brands fa-instagram"></i>
+                    </span>
+                  </div>
                 </div>
               </div>
-            </div>
-
-            <!-- Shop Details -->
-            <div class="shop-details">
-              <div class="row g-4">
-                <div class="col-12 col-sm-6 col-md-4">
-                  <div class="detail-item">
-                    <h6>📍 Location</h6>
-                    <p>Street, USA</p>
+              <!-- Shop Details -->
+              <div class="shop-details">
+                <div class="row g-4">
+                  <div class="col-12 col-sm-6 col-md-4">
+                    <div class="detail-item">
+                      <h6><span><i class="fa-solid fa-location-dot"></i></span> Location</h6>
+                      <p>Street, USA</p>
+                    </div>
                   </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-4">
-                  <div class="detail-item">
-                    <h6>📅 Joined</h6>
-                    <p>10 October 2021</p>
+                  <div class="col-12 col-sm-6 col-md-4">
+                    <div class="detail-item">
+                      <h6><span><i class="fa-solid fa-calendar-days"></i></span> Joined</h6>
+                      <p>10 October 2021</p>
+                    </div>
                   </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-4">
-                  <div class="detail-item">
-                    <h6>📦 Total Product</h6>
-                    <p>330</p>
+                  <div class="col-12 col-sm-6 col-md-4">
+                    <div class="detail-item">
+                      <h6><span><i class="fa-solid fa-box"></i></span> Total Product</h6>
+                      <p>330</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -232,89 +270,366 @@
         </div>
       </div>
     </div>
-  </div>
+    <!-- Product Grid -->
+    <section class="product-section" style="padding: 20px 0 40px 0;">
+      <div class="container">
 
-  <!-- Product Grid -->
-  <div class="container mb-5">
-    <div class="row g-4">
-      <!-- Product 1 -->
-      <div class="col-12 col-sm-6 col-lg-3">
-        <div class="product-card">
-          <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1585518419759-83b4fd499e5e?w=300&h=300&fit=crop"
-              alt="Quaker Oats">
-          </div>
-          <div class="product-body">
-            <h6 class="product-title">Quaker Oats</h6>
-            <div class="rating">
-              <span class="stars">★★★★☆</span>
-              <span class="review-count">21</span>
+        <div class="row justify-content-between">
+          <div class="col-lg-12">
+            <!-- Sort By Filter -->
+            <div class="row d-flex align-items-center">
+              <div class="col-12">
+                <div class="sort-by-filter">
+                  <label for="sort_by">Sort by:</label>
+                  <select id="sort_by" name="sort_by" onchange="console.log(this.value)">
+                    <option value="" disabled selected>Select</option>
+                    <option value="newest">Newest</option>
+                    <option value="oldest">Oldest</option>
+                    <option value="price_low_high">Price: Low to High</option>
+                    <option value="price_high_low">Price: High to Low</option>
+                    <option value="name_a_z">Name: A to Z</option>
+                    <option value="name_z_a">Name: Z to A</option>
+                  </select>
+                </div>
+              </div>
             </div>
-            <div class="product-price">$60</div>
-            <button class="add-to-cart-btn">Add to cart</button>
+            <div class="row">
+              <div class="col-lg-3 col-6 mt-4">
+                <div class="product-card align-items-center justify-content-center">
+                  <a href="product-details.html">
+                    <div class="card_slider categoryCard position-relative">
+                      <div class="product-img">
+                        <img src="./assets/img/bark-phone-black.jpg" alt="Product 1">
+                      </div>
+                      <div class="product-img">
+                        <img src="./assets/img/bark-phone-black.jpg" alt="Product 1">
+                      </div>
+                      <div class="product-img">
+                        <img src="./assets/img/bark-phone-light-brown.jpg" alt="Product 1">
+                      </div>
+                    </div>
+                  </a>
+                  <a href="">
+                    <div class="wishList-icon position-absolute">
+                      <i class="fa-regular fa-heart"></i>
+                    </div>
+                  </a>
+                  <h3 class="product-title text-center"> iPhone 11</h3>
+                  <p class="product-brand text-center">Brand: Apple</p>
+                  <div class="product-icon text-center">
+                    <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    <a href=""><i class="fa-brands fa-facebook"></i></a>
+                    <a href=""><i class="fa-brands fa-tiktok"></i></a>
+                  </div>
+                  <p class="product-category text-center">Category: Apparel</p>
+                </div>
+              </div>
+              <div class="col-lg-3 col-6 mt-4">
+                <a href="product-details.html">
+                  <div class="product-card align-items-center justify-content-center">
+                    <div class="card_slider">
+                      <div class="product-img">
+                        <img src="./assets/img/bark-phone-blue.jpg" alt="Product 1">
+                      </div>
+                      <div class="product-img">
+                        <img src="./assets/img/bark-phone-light-brown.jpg" alt="Product 1">
+                      </div>
+                      <div class="product-img">
+                        <img src="./assets/img/bark-phone-black.jpg" alt="Product 1">
+                      </div>
+                    </div>
+                    <h3 class="product-title text-center"> iPhone 12</h3>
+                    <p class="product-brand text-center">Brand: Apple</p>
+                    <div class="product-icon text-center">
+                      <i class="fa-brands fa-instagram"></i>
+                      <i class="fa-brands fa-facebook"></i>
+                      <i class="fa-brands fa-tiktok"></i>
+                    </div>
+                    <p class="product-category text-center">Category: Apparel</p>
+                  </div>
+                </a>
+              </div>
+              <div class="col-lg-3 col-6 mt-4">
+                <a href="product-details.html">
+                  <div class="product-card align-items-center justify-content-center">
+                    <div class="card_slider">
+
+                      <div class="product-img">
+                        <img src="./assets/img/bark-phone-light-brown.jpg" alt="Product 1">
+                      </div>
+                      <div class="product-img">
+                        <img src="./assets/img/bark-phone-black.jpg" alt="Product 1">
+                      </div>
+                      <div class="product-img">
+                        <img src="./assets/img/bark-phone-blue.jpg" alt="Product 1">
+                      </div>
+                    </div>
+                    <h3 class="product-title text-center"> iPhone 13</h3>
+                    <p class="product-brand text-center">Brand: Apple</p>
+                    <div class="product-icon text-center">
+                      <i class="fa-brands fa-instagram"></i>
+                      <i class="fa-brands fa-facebook"></i>
+                      <i class="fa-brands fa-tiktok"></i>
+                    </div>
+                    <p class="product-category text-center">Category: Apparel</p>
+                  </div>
+                </a>
+              </div>
+              <div class="col-lg-3 col-6 mt-4">
+                <a href="">
+                  <div class="product-card align-items-center justify-content-center">
+                    <div class="card_slider">
+                      <div class="product-img">
+                        <img src="./assets/img/bark-phone-black.jpg" alt="Product 1">
+                      </div>
+                      <div class="product-img">
+                        <img src="./assets/img/bark-phone-light-brown.jpg" alt="Product 1">
+                      </div>
+                      <div class="product-img">
+                        <img src="./assets/img/bark-phone-blue.jpg" alt="Product 1">
+                      </div>
+                    </div>
+                    <h3 class="product-title text-center"> iPhone 14</h3>
+                    <p class="product-brand text-center">Brand: Apple</p>
+                    <div class="product-icon text-center">
+                      <i class="fa-brands fa-instagram"></i>
+                      <i class="fa-brands fa-facebook"></i>
+                      <i class="fa-brands fa-tiktok"></i>
+                    </div>
+                    <p class="product-category text-center">Category: Apparel</p>
+                  </div>
+                </a>
+              </div>
+              <div class="col-lg-3 col-6 mt-4">
+                <a href="">
+                  <div class="product-card align-items-center justify-content-center">
+                    <div class="card_slider categoryCard">
+                      <div class="product-img">
+                        <img src="./assets/img/bark-phone-blue.jpg" alt="Product 1">
+                      </div>
+                      <div class="product-img">
+                        <img src="./assets/img/bark-phone-black.jpg" alt="Product 1">
+                      </div>
+                      <div class="product-img">
+                        <img src="./assets/img/bark-phone-light-brown.jpg" alt="Product 1">
+                      </div>
+                    </div>
+                    <h3 class="product-title text-center"> iPhone 15</h3>
+                    <p class="product-brand text-center">Brand: Apple</p>
+                    <div class="product-icon text-center">
+                      <i class="fa-brands fa-instagram"></i>
+                      <i class="fa-brands fa-facebook"></i>
+                      <i class="fa-brands fa-tiktok"></i>
+                    </div>
+                    <p class="product-category text-center">Category: Apparel</p>
+                  </div>
+                </a>
+              </div>
+              <div class="col-lg-3 col-6 mt-4">
+                <a href="">
+                  <div class="product-card align-items-center justify-content-center">
+                    <div class="card_slider">
+                      <div class="product-img">
+                        <img src="./assets/img/bark-phone-blue.jpg" alt="Product 1">
+                      </div>
+                      <div class="product-img">
+                        <img src="./assets/img/bark-phone-light-brown.jpg" alt="Product 1">
+                      </div>
+                      <div class="product-img">
+                        <img src="./assets/img/bark-phone-black.jpg" alt="Product 1">
+                      </div>
+                    </div>
+                    <h3 class="product-title text-center"> iPhone 16</h3>
+                    <p class="product-brand text-center">Brand: Apple</p>
+                    <div class="product-icon text-center">
+                      <i class="fa-brands fa-instagram"></i>
+                      <i class="fa-brands fa-facebook"></i>
+                      <i class="fa-brands fa-tiktok"></i>
+                    </div>
+                    <p class="product-category text-center">Category: Apparel</p>
+                  </div>
+                </a>
+              </div>
+              <div class="col-lg-3 col-6 mt-4">
+                <a href="">
+                  <div class="product-card align-items-center justify-content-center">
+                    <div class="card_slider">
+
+                      <div class="product-img">
+                        <img src="./assets/img/bark-phone-light-brown.jpg" alt="Product 1">
+                      </div>
+                      <div class="product-img">
+                        <img src="./assets/img/bark-phone-black.jpg" alt="Product 1">
+                      </div>
+                      <div class="product-img">
+                        <img src="./assets/img/bark-phone-blue.jpg" alt="Product 1">
+                      </div>
+                    </div>
+                    <h3 class="product-title text-center"> iPhone 13</h3>
+                    <p class="product-brand text-center">Brand: Apple</p>
+                    <div class="product-icon text-center">
+                      <i class="fa-brands fa-instagram"></i>
+                      <i class="fa-brands fa-facebook"></i>
+                      <i class="fa-brands fa-tiktok"></i>
+                    </div>
+                    <p class="product-category text-center">Category: Apparel</p>
+                  </div>
+                </a>
+              </div>
+              <div class="col-lg-3 col-6 mt-4">
+                <a href="">
+                  <div class="product-card align-items-center justify-content-center">
+                    <div class="card_slider">
+                      <div class="product-img">
+                        <img src="./assets/img/bark-phone-black.jpg" alt="Product 1">
+                      </div>
+                      <div class="product-img">
+                        <img src="./assets/img/bark-phone-light-brown.jpg" alt="Product 1">
+                      </div>
+                      <div class="product-img">
+                        <img src="./assets/img/bark-phone-blue.jpg" alt="Product 1">
+                      </div>
+                    </div>
+                    <h3 class="product-title text-center"> iPhone 13</h3>
+                    <p class="product-brand text-center">Brand: Apple</p>
+                    <div class="product-icon text-center">
+                      <i class="fa-brands fa-instagram"></i>
+                      <i class="fa-brands fa-facebook"></i>
+                      <i class="fa-brands fa-tiktok"></i>
+                    </div>
+                    <p class="product-category text-center">Category: Apparel</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <!-- Pagination Start -->
+            <nav aria-label="Page navigation example" class="d-flex justify-content-center mt-5">
+              <ul class="pagination pagination-custom">
+                <li class="page-item">
+                  <a class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                  </a>
+                </li>
+                <li class="page-item active" aria-current="page">
+                  <a class="page-link" href="#">1</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+            <!-- Pagination End -->
           </div>
         </div>
       </div>
+    </section>
+  </main>
 
-      <!-- Product 2 -->
-      <div class="col-12 col-sm-6 col-lg-3">
-        <div class="product-card">
-          <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1609953227369-ef7e7e14b9d7?w=300&h=300&fit=crop"
-              alt="Lay's wavy original">
-          </div>
-          <div class="product-body">
-            <h6 class="product-title">Lay's wavy original</h6>
-            <div class="rating">
-              <span class="stars">★★★★½</span>
-              <span class="review-count">23</span>
+
+    <!-- Footer Start -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row mainFooter">
+          <!-- About Glame -->
+          <div class="col-lg-3 col-md-6 mb-4 mb-sm-1 mb-lg-0">
+            <h5>About Glame</h5>
+            <p>
+              Morbi cursus porttitor enim lobortis molestie. Duis gravida
+              turpis dui, eget bibendum magna.
+            </p>
+            <div class="contact-info">
+              <a href="tel:(219) 555-0114">(219) 555-0114</a>
+              <span>or</span>
+              <a href="mailto:Proxy@gmail.com">Proxy@gmail.com</a>
             </div>
-            <div class="product-price">$5</div>
-            <button class="add-to-cart-btn">Add to cart</button>
+          </div>
+
+          <!-- My Account -->
+          <div class="col-lg-2 col-md-6 col-6 mb-6 mb-sm-1 mb-lg-0">
+            <h5>My Account</h5>
+            <ul>
+              <li><a href="#">My Account</a></li>
+              <li><a href="#">Order History</a></li>
+              <li><a href="#">Shopping Cart</a></li>
+              <li><a href="#">Wishlist</a></li>
+              <li><a href="#">Settings</a></li>
+            </ul>
+          </div>
+
+          <!-- Helps -->
+          <div class="col-lg-2 col-md-6 col-6 mb-6 mb-sm-1 mb-lg-0">
+            <h5>Helps</h5>
+            <ul>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Terms & Condition</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+
+          <!-- Proxy -->
+          <div class="col-lg-2 col-md-6 col-6 mb-6 mb-sm-1 mb-lg-0">
+            <h5>Proxy</h5>
+            <ul>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Shop</a></li>
+              <li><a href="#">Product</a></li>
+              <li><a href="#">Products Details</a></li>
+              <li><a href="#">Track Order</a></li>
+            </ul>
+          </div>
+
+          <!-- Instagram -->
+          <div class="footerInsta col-lg-3 col-md-6 col-6">
+            <h5>Instagram</h5>
+            <div class="instagram-feed">
+              <img src="./assets/img/insta/Image (1).png" alt="Instagram post" />
+              <img src="./assets/img/insta/Image (2).png" alt="Instagram post" />
+              <img src="./assets/img/insta/Image (3).png" alt="Instagram post" />
+              <img src="./assets/img/insta/Image (4).png" alt="Instagram post" />
+              <img src="./assets/img/insta/Image (5).png" alt="Instagram post" />
+              <img src="./assets/img/insta/Image.png" alt="Instagram post" />
+              <img src="./assets/img/insta/Image (4).png" alt="Instagram post" />
+              <img src="./assets/img/insta/Image (5).png" alt="Instagram post" />
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- Product 3 -->
-      <div class="col-12 col-sm-6 col-lg-3">
-        <div class="product-card">
-          <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1581578731548-c64695c952952?w=300&h=300&fit=crop" alt="Cascola">
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+          <div class="social-icons col-lg-4 col-md-4 col-6">
+            <a href="https://www.facebook.com/rafikul20"><i class="fa-brands fa-facebook"></i>
+            </a>
+            <a href="https://x.com/rafikul20r"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.pinterest.com/rafikul20/"><i class="fa-brands fa-pinterest"></i></a>
+            <a href="https://www.instagram.com/rafikul_20/"><i class="fa-brands fa-instagram"></i></a>
           </div>
-          <div class="product-body">
-            <h6 class="product-title">Cascola</h6>
-            <div class="rating">
-              <span class="stars">★★★★★</span>
-              <span class="review-count">12</span>
+          <div>
+            <div class="copyright d-none d-lg-block text-center">
+              <p>@rafikuldev. All Rights Reserved.</p>
             </div>
-            <div class="product-price">$10</div>
-            <button class="add-to-cart-btn">Add to cart</button>
+          </div>
+          <div class="payment-methods col-lg-4 col-md-4 col-6 text-end">
+            <img class="img-fluid" src="./assets/img/Payment Method.png" alt="" />
           </div>
         </div>
-      </div>
-
-      <!-- Product 4 -->
-      <div class="col-12 col-sm-6 col-lg-3">
-        <div class="product-card">
-          <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=300&h=300&fit=crop"
-              alt="Sliced Vegetables">
-          </div>
-          <div class="product-body">
-            <h6 class="product-title">Sliced Vegetables</h6>
-            <div class="rating">
-              <span class="stars">★★★½☆</span>
-              <span class="review-count">32</span>
-            </div>
-            <div class="product-price">$40</div>
-            <button class="add-to-cart-btn">Add to cart</button>
-          </div>
+        <div class="copyright copyrightLast col-12 text-center d-lg-none d-md-none d-sm-block">
+          <p>@rafikuldev. All Rights Reserved.</p>
         </div>
       </div>
-    </div>
-  </div>
+    </footer>
+    <!-- Footer End -->
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script src="./assets/js/iconify-icon.min.js"></script>
+  <script src="./assets/js/script.js"></script>
+  <script src="./assets/js/bootstrap.min.js"></script>
 </body>
 
 </html>

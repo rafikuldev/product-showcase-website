@@ -177,6 +177,7 @@ body {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
+  cursor: pointer;
 }
 .product-section .product-card:hover .wishList-icon {
   opacity: 1;
@@ -329,6 +330,10 @@ body {
     font-size: 0.675rem;
     color: #000000;
     margin-bottom: 20px;
+  }
+  .product-section .wishList-icon {
+    opacity: 1 !important;
+    visibility: visible !important;
   }
 }
 /* Contact Us */
@@ -1463,4 +1468,127 @@ label {
     height: auto;
   }
 }
-/* !============================================================ */
+/* !========================== Shop ================================== */
+.shop-page{
+    /* padding: 130px 0; */
+  background: #ffffff;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 13%,
+    rgba(236, 219, 197, 1) 100%
+  );
+}
+/* ========= Banner ========= */
+.banner {
+  height: 420px;
+  overflow: hidden;
+  position: relative;
+}
+
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin-top: 5%;
+}
+
+/* ========= Profile Section ========= */
+.profile-section {
+  margin-top: -70px;
+  position: relative;
+  z-index: 10;
+  margin-bottom: 32px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.21);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border: none;
+  border-radius: 16px;
+}
+
+/* Shop Logo */
+.shop-logo {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.shop-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Shop Name */
+.shop-name {
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 6px;
+}
+
+.shop-description {
+  color: #555;
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  gap: 22px;
+}
+
+.social-icons span {
+  font-size: 22px;
+  cursor: pointer;
+  color: #333;
+  transition: .2s;
+}
+
+.social-icons span:hover {
+  transform: scale(1.2);
+  color: #000;
+}
+
+/* ========= Shop Details ========= */
+.shop-details {
+  border-top: 1px solid #8c8c8c79;
+  padding-top: 22px;
+}
+
+.detail-item h6 {
+  font-size: 12px;
+  font-weight: 600;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.detail-item p {
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #222;
+  margin: 0;
+}
+/* ========= Responsive ========= */
+@media (max-width: 576px) {
+  .banner {
+    height: 180px;
+  }
+
+  .shop-name {
+    font-size: 22px;
+  }
+}
